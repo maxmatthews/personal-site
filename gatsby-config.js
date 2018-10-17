@@ -31,5 +31,11 @@ module.exports = {
 				}, // option to add more headers. `Link` headers are transformed by the below criteria
 			},
 		},
+		{
+			resolve: `gatsby-plugin-favicon`,
+			options: {
+				logo: './src/images/gatsby-icon.png',
+			},
+		},
 	],
 }
