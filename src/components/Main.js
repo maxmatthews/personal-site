@@ -50,6 +50,7 @@ class Main extends React.Component {
 						<a
 							href="https://github.com/codebushi/gatsby-starter-forty"
 							target="_blank"
+              rel="noopener noreferrer"
 						>
 							Codebushi
 						</a>
@@ -59,6 +60,7 @@ class Main extends React.Component {
 						<a
 							href="https://www.oxygenna.com/freebies/50-material-design-backgrounds"
 							target="_blank"
+              rel="noopener noreferrer"
 						>
 							Oxygenna
 						</a>
@@ -102,6 +104,7 @@ class Main extends React.Component {
 							<a
 								href="https://linkedin.com/in/maxzmatthews"
 								target="_blank"
+                rel="noopener noreferrer"
 								className="icon fa-linkedin"
 							>
 								<span className="label">LinkedIn</span>
@@ -111,6 +114,7 @@ class Main extends React.Component {
 							<a
 								href="https://twitter.com/teckno101"
 								target="_blank"
+                rel="noopener noreferrer"
 								className="icon fa-twitter"
 							>
 								<span className="label">Twitter</span>
@@ -120,6 +124,7 @@ class Main extends React.Component {
 							<a
 								href="https://medium.maxmatthe.ws"
 								target="_blank"
+                rel="noopener noreferrer"
 								className="icon fa-medium"
 							>
 								<span className="label">Medium</span>

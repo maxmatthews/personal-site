@@ -24,7 +24,7 @@ const Header = props => (
 		<nav>
 			<ul>
 				<li>
-					<a href={resume} target="_blank">
+					<a href={resume} target="_blank" rel="noopener noreferrer">
 						Resume
 					</a>
 				</li>
@@ -41,7 +41,6 @@ const Header = props => (
 				{/*<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>*/}
 				<li>
 					<a
-						href="javascript:;"
 						onClick={() => {
 							props.onOpenArticle('contact')
 						}}
@@ -57,6 +56,7 @@ const Header = props => (
 					<a
 						href="https://linkedin.com/in/maxzmatthews"
 						target="_blank"
+						rel="noopener noreferrer"
 						className="icon fa-linkedin"
 					>
 						<span className="label">LinkedIn</span>
@@ -66,6 +66,7 @@ const Header = props => (
 					<a
 						href="https://twitter.com/teckno101"
 						target="_blank"
+						rel="noopener noreferrer"
 						className="icon fa-twitter"
 					>
 						<span className="label">Twitter</span>
@@ -75,6 +76,7 @@ const Header = props => (
 					<a
 						href="https://medium.maxmatthe.ws"
 						target="_blank"
+						rel="noopener noreferrer"
 						className="icon fa-medium"
 					>
 						<span className="label">Medium</span>
