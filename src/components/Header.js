@@ -9,9 +9,9 @@ const Header = props => (
 			{/*<span className="icon fa-diamond"></span>*/}
 			<span>
 				<img
-					style={{ height: '5rem', marginTop: 5 }}
+					style={{ height: '5.2rem', marginTop: 5 }}
 					src={maxVector}
-					alt="vectorized image of max matthews"
+					alt="vectorized portrait of max matthews"
 				/>
 			</span>
 		</div>
