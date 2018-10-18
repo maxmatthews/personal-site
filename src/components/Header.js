@@ -24,9 +24,14 @@ const Header = props => (
 		<nav>
 			<ul>
 				<li>
-					<a href={resume} target="_blank" rel="noopener noreferrer">
+					<div
+						className="headerLink"
+						href={resume}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Resume
-					</a>
+					</div>
 				</li>
 				{/*<li>*/}
 				{/*<a*/}
@@ -40,13 +45,14 @@ const Header = props => (
 				{/*</li>*/}
 				{/*<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>*/}
 				<li>
-					<a
+					<div
+						className="headerLink"
 						onClick={() => {
 							props.onOpenArticle('contact')
 						}}
 					>
 						Contact
-					</a>
+					</div>
 				</li>
 			</ul>
 		</nav>

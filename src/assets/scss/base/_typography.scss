@@ -30,7 +30,7 @@
 		line-height: 1.65;
 	}
 
-	a {
+	a, .aTag {
 		@include vendor('transition', (
 			'color #{_duration(transition)} ease-in-out',
 			'background-color #{_duration(transition)} ease-in-out',
@@ -43,6 +43,10 @@
 		&:hover {
 			border-bottom-color: transparent;
 		}
+	}
+
+	.aTag{
+		cursor: pointer;
 	}
 
 	strong, b {
