@@ -56,7 +56,7 @@ const Header = props => (
 				</li>
 			</ul>
 		</nav>
-		<div>
+		<div style={{ marginTop: 0, paddingTop: '2.5rem' }}>
 			<ul className="icons">
 				<li>
 					<a
@@ -86,6 +86,16 @@ const Header = props => (
 						className="icon fa-medium"
 					>
 						<span className="label">Medium</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://github.com/maxmatthews/personal-site"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="icon fa-github"
+					>
+						<span className="label">GitHub</span>
 					</a>
 				</li>
 			</ul>
