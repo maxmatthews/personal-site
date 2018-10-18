@@ -27,7 +27,7 @@
 			position: relative;
 			margin-top: 3.5rem;
 
-			&:before {
+			&:not(#headerSocialIcons):before {
 				content: '';
 				display: block;
 				position: absolute;
