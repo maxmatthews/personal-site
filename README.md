@@ -2,7 +2,7 @@
 
 Personal site of Max Matthews running at https://maxmatthe.ws
 
-##Credits
+## Credits
 
 Fork of https://github.com/codebushi/gatsby-starter-forty
 
