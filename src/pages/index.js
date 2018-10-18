@@ -14,26 +14,12 @@ class IndexPage extends React.Component {
 			articleTimeout: false,
 			article: '',
 			loading: 'is-loading',
+			style: '',
 		}
 		this.handleOpenArticle = this.handleOpenArticle.bind(this)
 		this.handleCloseArticle = this.handleCloseArticle.bind(this)
 		this.setWrapperRef = this.setWrapperRef.bind(this)
 		this.handleClickOutside = this.handleClickOutside.bind(this)
-
-		this.style = (
-			<style
-				dangerouslySetInnerHTML={{
-					__html: [
-						'#bg:after {',
-						`  background-image: url(${require(`../images/bgs/bg-0${this.randNum(
-							1,
-							50
-						)}.jpg`)});`,
-						'}',
-					].join('\n'),
-				}}
-			/>
-		)
 	}
 
 	componentDidMount() {
@@ -41,6 +27,23 @@ class IndexPage extends React.Component {
 			this.setState({ loading: '' })
 		}, 100)
 		document.addEventListener('mousedown', this.handleClickOutside)
+
+		this.setState({
+			style: (
+				<style
+					dangerouslySetInnerHTML={{
+						__html: [
+							'#bg:after {',
+							`  background-image: url(${require(`../images/bgs/bg-0${this.randNum(
+								1,
+								50
+							)}.jpg`)});`,
+							'}',
+						].join('\n'),
+					}}
+				/>
+			),
+		})
 	}
 
 	componentWillUnmount() {
@@ -112,7 +115,7 @@ class IndexPage extends React.Component {
 						this.state.isArticleVisible ? 'is-article-visible' : ''
 					}`}
 				>
-					{this.style}
+					{this.state.style}
 					<div id="wrapper">
 						<Header
 							onOpenArticle={this.handleOpenArticle}
