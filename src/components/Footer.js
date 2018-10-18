@@ -6,14 +6,14 @@ const Footer = props => (
 	<footer id="footer" style={props.timeout ? { display: 'none' } : {}}>
 		<p className="copyright">
 			&copy; {moment().format('Y')}.{' '}
-			<a
-				href="javascript:;"
+			<span
+				className="aTag"
 				onClick={() => {
 					props.onOpenArticle('credits')
 				}}
 			>
 				Credits.
-			</a>
+			</span>
 		</p>
 	</footer>
 )

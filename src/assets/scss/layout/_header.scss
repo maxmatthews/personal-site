@@ -110,7 +110,8 @@
 						border-left: 0;
 					}
 
-					a {
+					a, .headerLink {
+						cursor: pointer;
 						display: block;
 						min-width: 7.5rem;
 						height: 2.75rem;
