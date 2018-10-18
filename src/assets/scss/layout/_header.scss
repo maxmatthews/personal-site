@@ -192,7 +192,7 @@
 			> * {
 				margin-top: 2rem;
 
-				&:before {
+				&:not(#headerSocialIcons):before {
 					top: calc(-2rem - 1px);
 					height: calc(2rem + 1px);
 				}
