@@ -24,14 +24,14 @@ const Header = props => (
 		<nav>
 			<ul>
 				<li>
-					<div
+					<a
 						className="headerLink"
 						href={resume}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						Resume
-					</div>
+					</a>
 				</li>
 				{/*<li>*/}
 				{/*<a*/}
@@ -56,7 +56,7 @@ const Header = props => (
 				</li>
 			</ul>
 		</nav>
-		<div style={{ marginTop: 0, paddingTop: '2.5rem' }}>
+		<div id="headerSocialIcons">
 			<ul className="icons">
 				<li>
 					<a
