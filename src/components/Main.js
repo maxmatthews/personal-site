@@ -122,12 +122,12 @@ class Main extends React.Component {
 						</li>
 						<li>
 							<a
-								href="https://medium.maxmatthe.ws"
+								href="https://blog.maxmatthe.ws"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="icon fa-medium"
+								className="icon fa-rss"
 							>
-								<span className="label">Medium</span>
+								<span className="label">Blog</span>
 							</a>
 						</li>
 						<li>
