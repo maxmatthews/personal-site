@@ -45,6 +45,11 @@ const Header = props => (
 				{/*</li>*/}
 				{/*<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>*/}
 				<li>
+					<a className="headerLink" href="https://blog.maxmatthe.ws">
+						Blog
+					</a>
+				</li>
+				<li>
 					<div
 						className="headerLink"
 						onClick={() => {
@@ -76,16 +81,6 @@ const Header = props => (
 						className="icon fa-twitter"
 					>
 						<span className="label">Twitter</span>
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://blog.maxmatthe.ws"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="icon fa-rss"
-					>
-						<span className="label">Blog</span>
 					</a>
 				</li>
 				<li>
