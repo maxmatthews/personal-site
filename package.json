@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "maxmatthews-personal-site",
+  "description": "Max Matthews Personal Website",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Max Matthews",
   "dependencies": {
     "gatsby": "^2.0.0",
     "gatsby-plugin-favicon": "^3.1.4",
