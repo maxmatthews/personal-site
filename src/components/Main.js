@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import card from '../assets/MatthewsMaxCard.pdf'
 
 class Main extends React.Component {
 	render() {
@@ -138,6 +139,16 @@ class Main extends React.Component {
 								className="icon fa-github"
 							>
 								<span className="label">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href={card}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="icon fa-address-card"
+							>
+								<span className="label">Business Card</span>
 							</a>
 						</li>
 					</ul>
