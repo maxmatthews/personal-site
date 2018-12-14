@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import maxVector from '../images/maxVector.svg'
 import resume from '../assets/MatthewsMaxResume.pdf'
+import card from '../assets/MatthewsMaxCard.pdf'
 
 const Header = props => (
 	<header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -91,6 +92,16 @@ const Header = props => (
 						className="icon fa-github"
 					>
 						<span className="label">GitHub</span>
+					</a>
+				</li>
+				<li>
+					<a
+						href={card}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="icon fa-address-card"
+					>
+						<span className="label">Business Card</span>
 					</a>
 				</li>
 			</ul>
