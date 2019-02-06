@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import maxVector from '../images/maxVector.svg'
-import resume from '../assets/MatthewsMaxResume.pdf'
+// import resume from '../assets/MatthewsMaxResume.pdf'
 import card from '../assets/MatthewsMaxCard.pdf'
 
 const Header = props => (
@@ -27,7 +27,8 @@ const Header = props => (
 				<li>
 					<a
 						className="headerLink"
-						href={resume}
+						// href={resume}
+						href="https://mzmtech.com/MatthewsMaxResume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
