@@ -123,7 +123,7 @@ class Main extends React.Component {
 						</li>
 						<li>
 							<a
-								href="https://blog.maxmatthe.ws"
+								href="https://medium.maxmatthe.ws"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="icon fa-rss"

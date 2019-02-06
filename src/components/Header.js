@@ -46,7 +46,7 @@ const Header = props => (
 				{/*</li>*/}
 				{/*<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>*/}
 				<li>
-					<a className="headerLink" href="https://blog.maxmatthe.ws">
+					<a className="headerLink" href="https://medium.maxmatthe.ws">
 						Blog
 					</a>
 				</li>
