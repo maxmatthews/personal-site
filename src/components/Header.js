@@ -4,6 +4,7 @@ import maxVector from '../images/maxVector.svg'
 // import resume from '../assets/MatthewsMaxResume.pdf'
 import card from '../assets/MatthewsMaxCard.pdf'
 
+
 const Header = props => (
 	<header id="header" style={props.timeout ? { display: 'none' } : {}}>
 		<div className="logo">
