@@ -2,7 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import card from '../assets/MatthewsMaxCard.pdf'
 
+function encode(data) {
+	return Object.keys(data)
+		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+		.join('&')
+}
+
 class Main extends React.Component {
+	handleSubmit = e => {
+		e.preventDefault()
+		const form = e.target
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({
+				'form-name': form.getAttribute('name'),
+				...this.state,
+			}),
+		})
+			.then(() => {
+				console.log('form submitted')
+			})
+			.catch(error => alert(error))
+	}
+
 	render() {
 		let close = (
 			<div
@@ -77,7 +100,13 @@ class Main extends React.Component {
 					style={{ display: 'none' }}
 				>
 					<h2 className="major">Contact</h2>
-					<form name="contact" method="POST">
+					<form
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						data-netlify-honeypot="bot-field"
+						onSubmit={this.handleSubmit}
+					>
 						{/*<input type="hidden" name="_honeypot" value="" />*/}
 						<input type="hidden" name="form-name" value="contact" />
 						<p style={{ display: 'none' }}>
