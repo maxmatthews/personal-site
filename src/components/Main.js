@@ -114,7 +114,7 @@ class Main extends React.Component {
 				>
 					<h2 className="major">Contact</h2>
 					{this.state.formSubmitted ? (
-						<p>Thanks, we'll be in touch soon!</p>
+						<p>Thanks, I'll be in touch soon!</p>
 					) : (
 						<form
 							name="contact"
