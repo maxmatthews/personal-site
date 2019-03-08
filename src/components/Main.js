@@ -77,8 +77,13 @@ class Main extends React.Component {
 					style={{ display: 'none' }}
 				>
 					<h2 className="major">Contact</h2>
-					<form name="contact" data-netlify="true">
+					<form name="contact" data-netlify="true" method="POST">
 						{/*<input type="hidden" name="_honeypot" value="" />*/}
+						<p style={{ display: 'none' }}>
+							<label>
+								Don’t fill this out if you're human: <input name="bot-field" />
+							</label>
+						</p>
 						<div className="field half first">
 							<label htmlFor="name">Name</label>
 							<input type="text" name="name" id="name" />
