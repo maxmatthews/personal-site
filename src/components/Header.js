@@ -4,7 +4,6 @@ import maxVector from '../images/maxVector.svg'
 // import resume from '../assets/MatthewsMaxResume.pdf'
 import card from '../assets/MatthewsMaxCard.pdf'
 
-
 const Header = props => (
 	<header id="header" style={props.timeout ? { display: 'none' } : {}}>
 		<div className="logo">
@@ -50,6 +49,20 @@ const Header = props => (
 				<li>
 					<a className="headerLink" href="https://medium.maxmatthe.ws">
 						Blog
+					</a>
+				</li>
+				<li>
+					<a
+						className="headerLink"
+						onClick={() => {
+							window.Calendly.initPopupWidget({
+								url: 'https://calendly.com/maxmatthews',
+							})
+							return false
+						}}
+						style={{ paddingLeft: 19, paddingRight: 19 }}
+					>
+						Calendar
 					</a>
 				</li>
 				<li>
