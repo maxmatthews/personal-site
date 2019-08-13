@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import Contact from './Contact'
-import Credits from './Credits'
+import React, { Component } from 'react';
+import Contact from './Contact';
+import Credits from './Credits';
+import Strengths from './Strengths';
 
 class Main extends React.Component {
 	constructor(props) {
-		super(props)
-		this.state = { formSubmitted: false }
+		super(props);
+		this.state = { formSubmitted: false };
 	}
 
 	render() {
@@ -13,14 +14,14 @@ class Main extends React.Component {
 			<div
 				className="close"
 				onClick={() => {
-					this.props.onCloseArticle()
+					this.props.onCloseArticle();
 
 					setTimeout(() => {
-						this.setState({ formSubmitted: false })
-					}, 500)
+						this.setState({ formSubmitted: false });
+					}, 500);
 				}}
 			/>
-		)
+		);
 
 		return (
 			<div
@@ -39,9 +40,15 @@ class Main extends React.Component {
 					articleTimeout={this.props.articleTimeout}
 					close={close}
 				/>
+
+				<Strengths
+					article={this.props.article}
+					articleTimeout={this.props.articleTimeout}
+					close={close}
+				/>
 			</div>
-		)
+		);
 	}
 }
 
-export default Main
+export default Main;

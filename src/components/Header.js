@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import maxVector from '../images/maxVector.svg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import maxVector from '../images/maxVector.svg';
 // import resume from '../assets/MatthewsMaxResume.pdf'
-import card from '../assets/MatthewsMaxCard.pdf'
+import card from '../assets/MatthewsMaxCard.pdf';
 
 const Header = props => (
 	<header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -35,17 +35,6 @@ const Header = props => (
 						Resume
 					</a>
 				</li>
-				{/*<li>*/}
-				{/*<a*/}
-				{/*href="javascript:;"*/}
-				{/*onClick={() => {*/}
-				{/*props.onOpenArticle('map')*/}
-				{/*}}*/}
-				{/*>*/}
-				{/*Map*/}
-				{/*</a>*/}
-				{/*</li>*/}
-				{/*<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>*/}
 				<li>
 					<a className="headerLink" href="https://medium.maxmatthe.ws">
 						Blog
@@ -57,8 +46,8 @@ const Header = props => (
 						onClick={() => {
 							window.Calendly.initPopupWidget({
 								url: 'https://calendly.com/maxmatthews',
-							})
-							return false
+							});
+							return false;
 						}}
 						style={{ paddingLeft: 19, paddingRight: 19 }}
 					>
@@ -69,7 +58,7 @@ const Header = props => (
 					<div
 						className="headerLink"
 						onClick={() => {
-							props.onOpenArticle('contact')
+							props.onOpenArticle('contact');
 						}}
 					>
 						Contact
@@ -119,14 +108,25 @@ const Header = props => (
 						<span className="label">Business Card</span>
 					</a>
 				</li>
+				<li>
+					<a
+						className="icon2 fad fa-dumbbell"
+						onClick={() => {
+							props.onOpenArticle('strengths');
+						}}
+						style={{ cursor: 'pointer' }}
+					>
+						<span className="label">Strengths</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</header>
-)
+);
 
 Header.propTypes = {
 	onOpenArticle: PropTypes.func,
 	timeout: PropTypes.bool,
-}
+};
 
-export default Header
+export default Header;
