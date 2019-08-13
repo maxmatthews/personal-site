@@ -26,7 +26,13 @@ export default class Strengths extends Component {
 					expand my themes below.
 				</p>
 				<Collapse>
-					<Panel header="Focus">
+					<Panel
+						header={
+							<span>
+								<i className="far fa-bullseye" /> Focus
+							</span>
+						}
+					>
 						<p>
 							"Where am I headed?" you ask yourself. You ask this question every
 							day. Guided by this theme of Focus, you need a clear destination.
@@ -48,7 +54,17 @@ export default class Strengths extends Component {
 							worth your time. You keep everyone on point.
 						</p>
 					</Panel>
-					<Panel header="Significance">
+					<Panel
+						header={
+							<span>
+								<i
+									className="far fa-file-certificate"
+									style={{ fontSize: 14 }}
+								/>{' '}
+								Significance
+							</span>
+						}
+					>
 						<p>
 							You want to be very significant in the eyes of other people. In
 							the truest sense of the word you want to be recognized. You want
@@ -68,7 +84,14 @@ export default class Strengths extends Component {
 							the exceptional. It is the theme that keeps you reaching.
 						</p>
 					</Panel>
-					<Panel header="Command">
+					<Panel
+						header={
+							<span>
+								<i className="far fa-terminal" style={{ fontSize: 12 }} />{' '}
+								Command
+							</span>
+						}
+					>
 						<p>
 							Command leads you to take charge. Unlike some people, you feel no
 							discomfort with imposing your views on others. On the contrary,
@@ -87,7 +110,14 @@ export default class Strengths extends Component {
 							drawn to you. You have presence. You have Command.
 						</p>
 					</Panel>
-					<Panel header="Achiever">
+					<Panel
+						header={
+							<span>
+								<i className="far fa-shield-check" />
+								&nbsp;Achiever
+							</span>
+						}
+					>
 						<p>
 							Your Achiever theme helps explain your drive. Achiever describes a
 							constant need for achievement. You feel as if every day starts at
@@ -111,7 +141,14 @@ export default class Strengths extends Component {
 							moving.
 						</p>
 					</Panel>
-					<Panel header="Competition">
+					<Panel
+						header={
+							<span>
+								<i className="far fa-trophy-alt" style={{ fontSize: 13 }} />{' '}
+								Competition
+							</span>
+						}
+					>
 						<p>
 							Competition is rooted in comparison. When you look at the world,
 							you are instinctively aware of other people’s performance. Their
