@@ -73,7 +73,7 @@ const Header = props => (
 						href="https://linkedin.com/in/maxzmatthews"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="icon fa-linkedin"
+						className="icon2 fab fa-linkedin-in"
 					>
 						<span className="label">LinkedIn</span>
 					</a>
@@ -83,7 +83,7 @@ const Header = props => (
 						href="https://twitter.com/teckno101"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="icon fa-twitter"
+						className="icon2 fab fa-twitter"
 					>
 						<span className="label">Twitter</span>
 					</a>
@@ -93,7 +93,7 @@ const Header = props => (
 						href="https://github.com/maxmatthews/personal-site"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="icon fa-github"
+						className="icon2 fab fa-github"
 					>
 						<span className="label">GitHub</span>
 					</a>
@@ -103,7 +103,7 @@ const Header = props => (
 						href={card}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="icon fa-address-card"
+						className="icon2 far fa-address-card"
 					>
 						<span className="label">Business Card</span>
 					</a>

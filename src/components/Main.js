@@ -3,7 +3,7 @@ import Contact from './Contact';
 import Credits from './Credits';
 import Strengths from './Strengths';
 
-class Main extends React.Component {
+class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { formSubmitted: false };
