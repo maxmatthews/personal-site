@@ -96,7 +96,7 @@ export default class Contact extends Component {
 							href="https://linkedin.com/in/maxzmatthews"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="icon fa-linkedin"
+							className="icon2 fab fa-linkedin-in"
 						>
 							<span className="label">LinkedIn</span>
 						</a>
@@ -106,7 +106,7 @@ export default class Contact extends Component {
 							href="https://twitter.com/teckno101"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="icon fa-twitter"
+							className="icon2 fab fa-twitter"
 						>
 							<span className="label">Twitter</span>
 						</a>
@@ -116,7 +116,7 @@ export default class Contact extends Component {
 							href="https://medium.maxmatthe.ws"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="icon fa-rss"
+							className="icon2 fas fa-rss"
 						>
 							<span className="label">Blog</span>
 						</a>
@@ -126,7 +126,7 @@ export default class Contact extends Component {
 							href="https://github.com/maxmatthews/personal-site"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="icon fa-github"
+							className="icon2 fab fa-github"
 						>
 							<span className="label">GitHub</span>
 						</a>
@@ -136,7 +136,7 @@ export default class Contact extends Component {
 							href={card}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="icon fa-address-card"
+							className="icon2 far fa-address-card"
 						>
 							<span className="label">Business Card</span>
 						</a>
