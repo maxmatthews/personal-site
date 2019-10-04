@@ -62,6 +62,8 @@ const Layout = ({ children, location }) => {
 							content="https://maxmatthe.ws/og_image.png"
 						/>
 						<meta property="og:title" content="Max Matthews" />
+						<meta property="og:image:width" content="Max Matthews" />
+						<meta property="og:image:height" content="Max Matthews" />
 						<meta
 							property="og:description"
 							content="Full stack javascript developer, hacker, mentor & entrepreneur."
