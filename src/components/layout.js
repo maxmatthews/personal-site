@@ -57,6 +57,15 @@ const Layout = ({ children, location }) => {
 							src="https://assets.calendly.com/assets/external/widget.js"
 							type="text/javascript"
 						/>
+						<meta
+							property="og:image"
+							content="https://maxmatthe.ws/og_image.png"
+						/>
+						<meta property="og:title" content="Max Matthews" />
+						<meta
+							property="og:description"
+							content="Full stack javascript developer, hacker, mentor & entrepreneur."
+						/>
 					</Helmet>
 					{content}
 				</div>
