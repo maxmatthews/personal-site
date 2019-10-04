@@ -70,6 +70,10 @@ const Layout = ({ children, location }) => {
 							property="og:description"
 							content="Full stack javascript developer, hacker, mentor & entrepreneur."
 						/>
+						<meta
+							property="og:video"
+							content="https://maxmatthe.ws/maxlogoanimation.mp4"
+						/>
 					</Helmet>
 					{content}
 				</div>
