@@ -74,7 +74,7 @@ const Layout = ({ children, location }) => {
 							property="og:video"
 							content="https://maxmatthe.ws/maxlogoanimation.mp4"
 						/>
-						<meta property="og:image:width" content="3840" />
+						<meta property="og:image:width" content="2160" />
 						<meta property="og:image:height" content="2160" />
 					</Helmet>
 					{content}
