@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Credits extends Component {
 	render() {
@@ -14,7 +14,7 @@ export default class Credits extends Component {
 				<p>
 					Theme by{' '}
 					<a
-						href="https://github.com/codebushi/gatsby-starter-forty"
+						href="https://github.com/codebushi/gatsby-starter-dimension"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -33,6 +33,6 @@ export default class Credits extends Component {
 				</p>
 				{this.props.close}
 			</article>
-		)
+		);
 	}
 }
