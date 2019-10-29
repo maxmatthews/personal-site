@@ -27,10 +27,12 @@ const Header = props => (
 				<li>
 					<a
 						className="headerLink"
-						// href={resume}
-						href="https://mzmtech.com/MatthewsMaxResume.pdf"
-						target="_blank"
-						rel="noopener noreferrer"
+						// href="https://mzmtech.com/MatthewsMaxResume.pdf"
+						// target="_blank"
+						// rel="noopener noreferrer"
+						onClick={() => {
+							props.onOpenArticle('resume');
+						}}
 					>
 						Resume
 					</a>
