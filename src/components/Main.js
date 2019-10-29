@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Contact from './Contact';
 import Credits from './Credits';
 import Strengths from './Strengths';
+import Resume from './Resume';
 
 class Main extends Component {
 	constructor(props) {
@@ -36,6 +37,12 @@ class Main extends Component {
 				/>
 
 				<Contact
+					article={this.props.article}
+					articleTimeout={this.props.articleTimeout}
+					close={close}
+				/>
+
+				<Resume
 					article={this.props.article}
 					articleTimeout={this.props.articleTimeout}
 					close={close}
