@@ -30,10 +30,20 @@ export default class Resume extends Component {
 					>
 						<img src={TextualResume} style={{ width: '90%' }} />
 					</div>
-					<div style={{ textAlign: 'center', cursor: 'pointer' }}>
+					<div
+						style={{ textAlign: 'center', cursor: 'pointer' }}
+						onClick={() => {
+							window.open('https://mzmtech.com/MatthewsMaxResume.pdf');
+						}}
+					>
 						<button>Graphical (PDF)</button>
 					</div>
-					<div style={{ textAlign: 'center', cursor: 'pointer' }}>
+					<div
+						style={{ textAlign: 'center', cursor: 'pointer' }}
+						onClick={() => {
+							window.open('https://resume.creddle.io/resume/gkf096723g5');
+						}}
+					>
 						<button>Textual (Web)</button>
 					</div>
 				</div>
