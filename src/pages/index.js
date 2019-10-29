@@ -1,13 +1,13 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/layout';
 
-import Header from '../components/Header'
-import Main from '../components/Main'
-import Footer from '../components/Footer'
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
 
 class IndexPage extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			isArticleVisible: false,
 			timeout: false,
@@ -15,18 +15,31 @@ class IndexPage extends React.Component {
 			article: '',
 			loading: 'is-loading',
 			style: '',
-		}
-		this.handleOpenArticle = this.handleOpenArticle.bind(this)
-		this.handleCloseArticle = this.handleCloseArticle.bind(this)
-		this.setWrapperRef = this.setWrapperRef.bind(this)
-		this.handleClickOutside = this.handleClickOutside.bind(this)
+		};
+		this.handleOpenArticle = this.handleOpenArticle.bind(this);
+		this.handleCloseArticle = this.handleCloseArticle.bind(this);
+		this.setWrapperRef = this.setWrapperRef.bind(this);
+		this.handleClickOutside = this.handleClickOutside.bind(this);
 	}
 
 	componentDidMount() {
 		this.timeoutId = setTimeout(() => {
-			this.setState({ loading: '' })
-		}, 100)
-		document.addEventListener('mousedown', this.handleClickOutside)
+			this.setState({ loading: '' });
+		}, 100);
+		document.addEventListener('mousedown', this.handleClickOutside);
+
+		let vars = {};
+		window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(
+			m,
+			key,
+			value
+		) {
+			vars[key] = value;
+		});
+
+		if (vars.redirectFrom === '/resume') {
+			this.handleOpenArticle('resume');
+		}
 
 		this.setState({
 			style: (
@@ -43,68 +56,68 @@ class IndexPage extends React.Component {
 					}}
 				/>
 			),
-		})
+		});
 	}
 
 	componentWillUnmount() {
 		if (this.timeoutId) {
-			clearTimeout(this.timeoutId)
+			clearTimeout(this.timeoutId);
 		}
-		document.removeEventListener('mousedown', this.handleClickOutside)
+		document.removeEventListener('mousedown', this.handleClickOutside);
 	}
 
 	setWrapperRef(node) {
-		this.wrapperRef = node
+		this.wrapperRef = node;
 	}
 
 	handleOpenArticle(article) {
 		this.setState({
 			isArticleVisible: !this.state.isArticleVisible,
 			article,
-		})
+		});
 
 		setTimeout(() => {
 			this.setState({
 				timeout: !this.state.timeout,
-			})
-		}, 325)
+			});
+		}, 325);
 
 		setTimeout(() => {
 			this.setState({
 				articleTimeout: !this.state.articleTimeout,
-			})
-		}, 350)
+			});
+		}, 350);
 	}
 
 	handleCloseArticle() {
 		this.setState({
 			articleTimeout: !this.state.articleTimeout,
-		})
+		});
 
 		setTimeout(() => {
 			this.setState({
 				timeout: !this.state.timeout,
-			})
-		}, 325)
+			});
+		}, 325);
 
 		setTimeout(() => {
 			this.setState({
 				isArticleVisible: !this.state.isArticleVisible,
 				article: '',
-			})
-		}, 350)
+			});
+		}, 350);
 	}
 
 	handleClickOutside(event) {
 		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
 			if (this.state.isArticleVisible) {
-				this.handleCloseArticle()
+				this.handleCloseArticle();
 			}
 		}
 	}
 
 	randNum(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min
+		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
 	render() {
@@ -137,8 +150,8 @@ class IndexPage extends React.Component {
 					<div id="bg" />
 				</div>
 			</Layout>
-		)
+		);
 	}
 }
 
-export default IndexPage
+export default IndexPage;
