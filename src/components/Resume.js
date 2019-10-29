@@ -13,15 +13,14 @@ export default class Resume extends Component {
 				style={{ display: 'none' }}
 			>
 				<h2 className="major">Resume</h2>
-				<div style={{ display: 'grid', gridTemplateColumns: 'auto auto' }}>
+				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
 					<div
 						style={{ textAlign: 'center', cursor: 'pointer' }}
 						onClick={() => {
 							window.open('https://mzmtech.com/MatthewsMaxResume.pdf');
 						}}
 					>
-						<img src={GraphicalResume} style={{ height: 450 }} />
-						<button>Graphical (PDF)</button>
+						<img src={GraphicalResume} style={{ width: '90%' }} />
 					</div>
 					<div
 						style={{ textAlign: 'center', cursor: 'pointer' }}
@@ -29,7 +28,12 @@ export default class Resume extends Component {
 							window.open('https://resume.creddle.io/resume/gkf096723g5');
 						}}
 					>
-						<img src={TextualResume} style={{ height: 450 }} />
+						<img src={TextualResume} style={{ width: '90%' }} />
+					</div>
+					<div style={{ textAlign: 'center', cursor: 'pointer' }}>
+						<button>Graphical (PDF)</button>
+					</div>
+					<div style={{ textAlign: 'center', cursor: 'pointer' }}>
 						<button>Textual (Web)</button>
 					</div>
 				</div>
