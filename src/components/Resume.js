@@ -13,38 +13,29 @@ export default class Resume extends Component {
 				style={{ display: 'none' }}
 			>
 				<h2 className="major">Resume</h2>
-				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+				<div
+					style={{
+						display: 'grid',
+						gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+					}}
+				>
 					<div
-						style={{ textAlign: 'center', cursor: 'pointer' }}
+						style={{ textAlign: 'center', cursor: 'pointer', marginBottom: 30 }}
 						onClick={() => {
 							window.open('https://mzmtech.com/MatthewsMaxResume.pdf');
 						}}
 					>
 						<img src={GraphicalResume} style={{ width: '90%' }} />
+						<button style={{ marginTop: 10 }}>Graphical (PDF)</button>
 					</div>
 					<div
-						style={{ textAlign: 'center', cursor: 'pointer' }}
+						style={{ textAlign: 'center', cursor: 'pointer', marginBottom: 30 }}
 						onClick={() => {
 							window.open('https://resume.creddle.io/resume/gkf096723g5');
 						}}
 					>
 						<img src={TextualResume} style={{ width: '90%' }} />
-					</div>
-					<div
-						style={{ textAlign: 'center', cursor: 'pointer' }}
-						onClick={() => {
-							window.open('https://mzmtech.com/MatthewsMaxResume.pdf');
-						}}
-					>
-						<button>Graphical (PDF)</button>
-					</div>
-					<div
-						style={{ textAlign: 'center', cursor: 'pointer' }}
-						onClick={() => {
-							window.open('https://resume.creddle.io/resume/gkf096723g5');
-						}}
-					>
-						<button>Textual (Web)</button>
+						<button style={{ marginTop: 10 }}>Textual (Web)</button>
 					</div>
 				</div>
 				{this.props.close}
