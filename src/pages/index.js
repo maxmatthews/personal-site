@@ -61,6 +61,11 @@ class IndexPage extends React.Component {
 				/>
 			),
 		});
+
+		setTimeout(() => {
+			console.log('hit');
+			this.handleOpenArticle('getOnlineWorkshop');
+		}, 1000);
 	}
 
 	componentWillUnmount() {
