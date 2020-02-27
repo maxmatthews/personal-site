@@ -41,6 +41,10 @@ class IndexPage extends React.Component {
 			this.handleOpenArticle('resume');
 		}
 
+		if (vars.redirectFrom === '/getOnlineWorkshop') {
+			this.handleOpenArticle('getOnlineWorkshop');
+		}
+
 		this.setState({
 			style: (
 				<style
