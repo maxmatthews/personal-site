@@ -22,7 +22,7 @@ export default class Resume extends Component {
 					<div
 						style={{ textAlign: 'center', cursor: 'pointer', marginBottom: 30 }}
 						onClick={() => {
-							window.open('https://mzmtech.com/MatthewsMaxResume.pdf');
+							window.open('https://drive.google.com/file/d/1gNYcPSCecQPctiGZNWKWnauFKcbx9khI/view?usp=drive_link');
 						}}
 					>
 						<img src={GraphicalResume} style={{ width: '90%' }} />
