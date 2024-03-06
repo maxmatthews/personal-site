@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Contact from './Contact';
-import Credits from './Credits';
-import Strengths from './Strengths';
-import Resume from './Resume';
-import GetOnlineWorkshop from './GetOnlineWorkshop';
+import React, { Component } from "react";
+import Contact from "./Contact";
+import Credits from "./Credits";
+import Strengths from "./Strengths";
+import Resume from "./Resume";
+import GetOnlineWorkshop from "./GetOnlineWorkshop";
 
 class Main extends Component {
 	constructor(props) {
@@ -29,7 +29,7 @@ class Main extends Component {
 			<div
 				ref={this.props.setWrapperRef}
 				id="main"
-				style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
+				style={this.props.timeout ? { display: "flex" } : { display: "none" }}
 			>
 				<Credits
 					article={this.props.article}

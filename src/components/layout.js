@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
 
-import 'rc-collapse/assets/index.css';
-import '@fortawesome/fontawesome-pro/css/all.min.css';
-import '../assets/scss/main.scss';
+import "rc-collapse/assets/index.css";
+import "@fortawesome/fontawesome-pro/css/all.min.css";
+import "../assets/scss/main.scss";
 
 const Layout = ({ children, location }) => {
 	let content;
 
-	if (location && location.pathname === '/') {
+	if (location && location.pathname === "/") {
 		content = <div>{children}</div>;
 	} else {
 		content = (
@@ -31,20 +31,20 @@ const Layout = ({ children, location }) => {
 					}
 				}
 			`}
-			render={data => (
+			render={(data) => (
 				<div>
 					<Helmet
 						title={data.site.siteMetadata.title}
 						meta={[
 							{
-								name: 'description',
+								name: "description",
 								content:
-									'Max Matthews: Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.',
+									"Max Matthews: Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.",
 							},
 							{
-								name: 'keywords',
+								name: "keywords",
 								content:
-									'max matthews, full stack developer, javascript, mentor, hacker, entrepreneur',
+									"max matthews, full stack developer, javascript, mentor, hacker, entrepreneur",
 							},
 						]}
 					>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Credits extends Component {
 	render() {
@@ -6,9 +6,9 @@ export default class Credits extends Component {
 			<article
 				id="credits"
 				className={`${
-					this.props.article === 'getOnlineWorkshop' ? 'active' : ''
-				} ${this.props.articleTimeout ? 'timeout' : ''}`}
-				style={{ display: 'none' }}
+					this.props.article === "getOnlineWorkshop" ? "active" : ""
+				} ${this.props.articleTimeout ? "timeout" : ""}`}
+				style={{ display: "none" }}
 			>
 				<h2 className="major">Get Online Workshop</h2>
 				<ul>

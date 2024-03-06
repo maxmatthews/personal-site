@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import maxVector from '../images/maxVector.svg';
+import React from "react";
+import PropTypes from "prop-types";
+import maxVector from "../images/headshot.png";
 // import resume from '../assets/MatthewsMaxResume.pdf'
-import card from '../assets/MatthewsMaxCard.pdf';
+import card from "../assets/MatthewsMaxCard.pdf";
 
-const Header = props => (
-	<header id="header" style={props.timeout ? { display: 'none' } : {}}>
+const Header = (props) => (
+	<header id="header" style={props.timeout ? { display: "none" } : {}}>
 		<div className="logo">
 			{/*<span className="icon fa-diamond"></span>*/}
 			<span>
 				<img
-					style={{ height: '5.2rem', marginTop: 5 }}
+					style={{ height: "5.2rem", marginTop: 5 }}
 					src={maxVector}
 					alt="vectorized portrait of max matthews"
 				/>
@@ -19,7 +19,24 @@ const Header = props => (
 		<div className="content">
 			<div className="inner">
 				<h1>Max Matthews</h1>
-				<p>CTO @ <a href={"https://wearetuzag.com"}>tuzag</a> <code>&&</code> Lead Instructor @ <a href={"https://careersincode.org"}>Careers In Code</a></p>
+				<p>
+					CTO @{" "}
+					<a
+						href={"https://wearetuzag.com"}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						tuzag
+					</a>{" "}
+					<code>&&</code> Lead Instructor @{" "}
+					<a
+						href={"https://careersincode.org"}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Careers In Code
+					</a>
+				</p>
 				<p>Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.</p>
 			</div>
 		</div>
@@ -32,7 +49,7 @@ const Header = props => (
 						// target="_blank"
 						// rel="noopener noreferrer"
 						onClick={() => {
-							props.onOpenArticle('resume');
+							props.onOpenArticle("resume");
 						}}
 					>
 						Resume
@@ -48,7 +65,7 @@ const Header = props => (
 						className="headerLink"
 						onClick={() => {
 							window.Calendly.initPopupWidget({
-								url: 'https://calendly.com/maxmatthews',
+								url: "https://calendly.com/maxmatthews",
 							});
 							return false;
 						}}
@@ -61,7 +78,7 @@ const Header = props => (
 					<div
 						className="headerLink"
 						onClick={() => {
-							props.onOpenArticle('contact');
+							props.onOpenArticle("contact");
 						}}
 					>
 						Contact
@@ -115,9 +132,9 @@ const Header = props => (
 					<a
 						className="icon2 fad fa-dumbbell"
 						onClick={() => {
-							props.onOpenArticle('strengths');
+							props.onOpenArticle("strengths");
 						}}
-						style={{ cursor: 'pointer' }}
+						style={{ cursor: "pointer" }}
 					>
 						<span className="label">Strengths</span>
 					</a>
