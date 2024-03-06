@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Credits extends Component {
 	render() {
 		return (
 			<article
 				id="credits"
-				className={`${this.props.article === 'credits' ? 'active' : ''} ${
-					this.props.articleTimeout ? 'timeout' : ''
+				className={`${this.props.article === "credits" ? "active" : ""} ${
+					this.props.articleTimeout ? "timeout" : ""
 				}`}
-				style={{ display: 'none' }}
+				style={{ display: "none" }}
 			>
 				<h2 className="major">Credits</h2>
 				<p>
-					Theme by{' '}
+					Theme by{" "}
 					<a
 						href="https://github.com/codebushi/gatsby-starter-dimension"
 						target="_blank"
@@ -22,7 +22,7 @@ export default class Credits extends Component {
 					</a>
 				</p>
 				<p>
-					Backgrounds by{' '}
+					Backgrounds by{" "}
 					<a
 						href="https://www.oxygenna.com/freebies/50-material-design-backgrounds"
 						target="_blank"

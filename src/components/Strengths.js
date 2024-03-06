@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import Collapse, { Panel } from 'rc-collapse';
+import React, { Component } from "react";
+import Collapse, { Panel } from "rc-collapse";
 
 export default class Strengths extends Component {
 	render() {
 		return (
 			<article
 				id="strengths"
-				className={`${this.props.article === 'strengths' ? 'active' : ''} ${
-					this.props.articleTimeout ? 'timeout' : ''
+				className={`${this.props.article === "strengths" ? "active" : ""} ${
+					this.props.articleTimeout ? "timeout" : ""
 				}`}
-				style={{ display: 'none' }}
+				style={{ display: "none" }}
 			>
 				<h2 className="major">StrengthsFinder</h2>
 				<p>
-					Clifton{' '}
+					Clifton{" "}
 					<a
 						href="https://www.gallupstrengthscenter.com/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						StrengthsFinder
-					</a>{' '}
+					</a>{" "}
 					is an assessment tool used to maximize both team and personal
 					productivity. To learn a little bit more about what makes me "tick,"
 					expand my themes below.
@@ -60,7 +60,7 @@ export default class Strengths extends Component {
 								<i
 									className="far fa-file-certificate"
 									style={{ fontSize: 14 }}
-								/>{' '}
+								/>{" "}
 								Significance
 							</span>
 						}
@@ -87,7 +87,7 @@ export default class Strengths extends Component {
 					<Panel
 						header={
 							<span>
-								<i className="far fa-terminal" style={{ fontSize: 12 }} />{' '}
+								<i className="far fa-terminal" style={{ fontSize: 12 }} />{" "}
 								Command
 							</span>
 						}
@@ -144,7 +144,7 @@ export default class Strengths extends Component {
 					<Panel
 						header={
 							<span>
-								<i className="far fa-trophy-alt" style={{ fontSize: 13 }} />{' '}
+								<i className="far fa-trophy-alt" style={{ fontSize: 13 }} />{" "}
 								Competition
 							</span>
 						}

@@ -1,33 +1,35 @@
-import card from '../assets/MatthewsMaxCard.pdf';
-import React, { Component } from 'react';
+import card from "../assets/MatthewsMaxCard.pdf";
+import React, { Component } from "react";
 
 export default class Contact extends Component {
 	state = { formSubmitted: false };
 
 	encode(data) {
 		return Object.keys(data)
-			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-			.join('&');
+			.map(
+				(key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
+			)
+			.join("&");
 	}
 
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault();
 		const form = e.target;
-		fetch('/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: this.encode({
-				'form-name': form.getAttribute('name'),
+				"form-name": form.getAttribute("name"),
 				...this.state,
 			}),
 		})
 			.then(() => {
 				this.setState({ formSubmitted: true });
 			})
-			.catch(error => alert(error));
+			.catch((error) => alert(error));
 	};
 
-	handleChange = e => {
+	handleChange = (e) => {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
@@ -35,10 +37,10 @@ export default class Contact extends Component {
 		return (
 			<article
 				id="contact"
-				className={`${this.props.article === 'contact' ? 'active' : ''} ${
-					this.props.articleTimeout ? 'timeout' : ''
+				className={`${this.props.article === "contact" ? "active" : ""} ${
+					this.props.articleTimeout ? "timeout" : ""
 				}`}
-				style={{ display: 'none' }}
+				style={{ display: "none" }}
 			>
 				<h2 className="major">Contact</h2>
 				{this.state.formSubmitted ? (
@@ -52,7 +54,7 @@ export default class Contact extends Component {
 						onSubmit={this.handleSubmit}
 					>
 						<input type="hidden" name="form-name" value="contact" />
-						<div style={{ display: 'none' }}>
+						<div style={{ display: "none" }}>
 							<label>Don’t fill this out if you're human: </label>
 							<input name="bot-field" onChange={this.handleChange} />
 						</div>

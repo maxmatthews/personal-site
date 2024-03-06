@@ -1,9 +1,9 @@
-import React from 'react';
-import Layout from '../components/layout';
+import React from "react";
+import Layout from "../components/layout";
 
-import Header from '../components/Header';
-import Main from '../components/Main';
-import Footer from '../components/Footer';
+import Header from "../components/Header";
+import Main from "../components/Main";
+import Footer from "../components/Footer";
 
 class IndexPage extends React.Component {
 	constructor(props) {
@@ -12,9 +12,9 @@ class IndexPage extends React.Component {
 			isArticleVisible: false,
 			timeout: false,
 			articleTimeout: false,
-			article: '',
-			loading: 'is-loading',
-			style: '',
+			article: "",
+			loading: "is-loading",
+			style: "",
 		};
 		this.handleOpenArticle = this.handleOpenArticle.bind(this);
 		this.handleCloseArticle = this.handleCloseArticle.bind(this);
@@ -24,28 +24,27 @@ class IndexPage extends React.Component {
 
 	componentDidMount() {
 		this.timeoutId = setTimeout(() => {
-			this.setState({ loading: '' });
+			this.setState({ loading: "" });
 		}, 100);
-		document.addEventListener('mousedown', this.handleClickOutside);
+		document.addEventListener("mousedown", this.handleClickOutside);
 
 		let vars = {};
-		window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(
-			m,
-			key,
-			value
-		) {
-			vars[key] = value;
-		});
+		window.location.href.replace(
+			/[?&]+([^=&]+)=([^&]*)/gi,
+			function (m, key, value) {
+				vars[key] = value;
+			},
+		);
 
-		if (vars.redirectFrom === '/resume') {
-			this.handleOpenArticle('resume');
+		if (vars.redirectFrom === "/resume") {
+			this.handleOpenArticle("resume");
 		}
 
 		if (
 			vars.redirectFrom &&
-			vars.redirectFrom.toLowerCase() === '/getonlineworkshop'
+			vars.redirectFrom.toLowerCase() === "/getonlineworkshop"
 		) {
-			this.handleOpenArticle('getOnlineWorkshop');
+			this.handleOpenArticle("getOnlineWorkshop");
 		}
 
 		this.setState({
@@ -53,13 +52,12 @@ class IndexPage extends React.Component {
 				<style
 					dangerouslySetInnerHTML={{
 						__html: [
-							'#bg:after {',
-							`  background-image: url(${require(`../images/bgs/bg-0${this.randNum(
-								1,
-								50
-							)}.jpg`)});`,
-							'}',
-						].join('\n'),
+							"#bg:after {",
+							`  background-image: url(${require(
+								`../images/bgs/bg-0${this.randNum(1, 50)}.jpg`,
+							)});`,
+							"}",
+						].join("\n"),
 					}}
 				/>
 			),
@@ -70,7 +68,7 @@ class IndexPage extends React.Component {
 		if (this.timeoutId) {
 			clearTimeout(this.timeoutId);
 		}
-		document.removeEventListener('mousedown', this.handleClickOutside);
+		document.removeEventListener("mousedown", this.handleClickOutside);
 	}
 
 	setWrapperRef(node) {
@@ -110,7 +108,7 @@ class IndexPage extends React.Component {
 		setTimeout(() => {
 			this.setState({
 				isArticleVisible: !this.state.isArticleVisible,
-				article: '',
+				article: "",
 			});
 		}, 350);
 	}
@@ -132,7 +130,7 @@ class IndexPage extends React.Component {
 			<Layout location={this.props.location}>
 				<div
 					className={`body ${this.state.loading} ${
-						this.state.isArticleVisible ? 'is-article-visible' : ''
+						this.state.isArticleVisible ? "is-article-visible" : ""
 					}`}
 				>
 					{this.state.style}
