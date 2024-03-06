@@ -32,12 +32,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-favicon`,
-			options: {
-				logo: './src/images/gatsby-icon.png',
-			},
-		},
-		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
 				trackingId: 'UA-81233331-1',
