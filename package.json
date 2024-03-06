@@ -4,19 +4,22 @@
 	"version": "1.0.0",
 	"author": "Max Matthews",
 	"dependencies": {
-		"gatsby": "^2",
-		"gatsby-plugin-favicon": "^3.1.4",
-		"gatsby-plugin-google-analytics": "^2.0.21",
-		"gatsby-plugin-manifest": "^2.2.5",
-		"gatsby-plugin-netlify": "^2.0.17",
-		"gatsby-plugin-offline": "^2.0.5",
-		"gatsby-plugin-react-helmet": "^3.0.0",
-		"gatsby-plugin-sass": "^2.0.1",
-		"moment": "^2.22.2",
-		"rc-collapse": "^1.11.3",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6",
-		"react-helmet": "^5.2.1"
+		"@gatsbyjs/reach-router": "^2.0.1",
+		"gatsby": "^5",
+		"gatsby-link": "^5.13.1",
+		"gatsby-plugin-google-analytics": "^5.13.1",
+		"gatsby-plugin-manifest": "^5.13.1",
+		"gatsby-plugin-netlify": "^5.1.1",
+		"gatsby-plugin-offline": "^6.13.1",
+		"gatsby-plugin-react-helmet": "^6.13.1",
+		"gatsby-plugin-sass": "^6.13.1",
+		"gatsby-react-router-scroll": "^6.13.1",
+		"gatsby-script": "^2.13.0",
+		"moment": "^2.30.1",
+		"rc-collapse": "^3.7.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-helmet": "^6.1.0"
 	},
 	"keywords": [
 		"gatsby"
@@ -30,7 +33,7 @@
 	},
 	"devDependencies": {
 		"@fortawesome/fontawesome-pro": "./src/fortawesome-fontawesome-pro-5.14.0.tgz",
-		"prettier": "^1.14.2"
+		"prettier": "^3.2.5"
 	},
 	"repository": {
 		"type": "git",

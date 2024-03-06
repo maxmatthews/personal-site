@@ -19,6 +19,7 @@ const Header = props => (
 		<div className="content">
 			<div className="inner">
 				<h1>Max Matthews</h1>
+				<p>CTO @ <a href={"https://wearetuzag.com"}>tuzag</a> <code>&&</code> Lead Instructor @ <a href={"https://careersincode.org"}>Careers In Code</a></p>
 				<p>Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.</p>
 			</div>
 		</div>
