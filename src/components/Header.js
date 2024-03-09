@@ -37,7 +37,10 @@ const Header = (props) => (
 						Careers In Code
 					</a>
 				</p>
-				<p>Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.</p>
+				<p>
+					Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.
+					Syracuse, NY.
+				</p>
 			</div>
 		</div>
 		<nav>
