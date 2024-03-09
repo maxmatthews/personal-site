@@ -3,7 +3,7 @@ module.exports = {
 		title: "Max Matthews",
 		author: "Max Matthews",
 		description:
-			"CTO @ tuzag && Lead Instructor @ Careers in Code. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.",
+			"Max Matthews is CTO @ tuzag && Lead Instructor @ Careers in Code. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY.",
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet",
