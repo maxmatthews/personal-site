@@ -16,6 +16,7 @@ class IndexPage extends React.Component {
 			article: "",
 			loading: "is-loading",
 			style: "",
+			cssLoaded: false,
 		};
 		this.handleOpenArticle = this.handleOpenArticle.bind(this);
 		this.handleCloseArticle = this.handleCloseArticle.bind(this);
@@ -24,6 +25,7 @@ class IndexPage extends React.Component {
 	}
 
 	componentDidMount() {
+		this.setState({ cssLoaded: true });
 		this.timeoutId = setTimeout(() => {
 			this.setState({ loading: "" });
 		}, 100);
@@ -127,10 +129,13 @@ class IndexPage extends React.Component {
 	render() {
 		return (
 			<Layout location={this.props.location}>
-				<link
-					href="https://assets.calendly.com/assets/external/widget.css"
-					rel={"stylesheet"}
-				/>
+				{this.state.cssLoaded && (
+					<link
+						rel="stylesheet"
+						href="https://assets.calendly.com/assets/external/widget.css"
+					/>
+				)}
+
 				<div
 					className={`body ${this.state.loading} ${
 						this.state.isArticleVisible ? "is-article-visible" : ""
@@ -198,6 +203,7 @@ export const Head = () => {
 			/>
 			<meta property="og:image:width" content="3840" />
 			<meta property="og:image:height" content="2160" />
+			<title>Max Matthews</title>
 		</>
 	);
 };

@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
 
 const Footer = (props) => (
 	<footer id="footer" style={props.timeout ? { display: "none" } : {}}>
 		<p className="copyright">
-			&copy; {moment().format("Y")}.{" "}
+			&copy; {new Date().getFullYear()}.{" "}
 			<span
 				className="aTag"
 				onClick={() => {

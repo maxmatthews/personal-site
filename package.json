@@ -19,7 +19,6 @@
 		"gatsby-script": "^2.13.0",
 		"gatsby-source-filesystem": "^5.13.1",
 		"gatsby-transformer-sharp": "^5.13.1",
-		"moment": "^2.30.1",
 		"rc-collapse": "^3.7.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
@@ -36,6 +35,7 @@
 	},
 	"devDependencies": {
 		"@fortawesome/fontawesome-pro": "./src/fortawesome-fontawesome-pro-5.14.0.tgz",
+		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.32",
 		"prettier": "^3.2.5"
 	},
 	"repository": {
