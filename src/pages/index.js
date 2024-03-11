@@ -54,9 +54,7 @@ class IndexPage extends React.Component {
 					dangerouslySetInnerHTML={{
 						__html: [
 							"#bg:after {",
-							`  background-image: url(${require(
-								`../images/bgs/bg-0${this.randNum(1, 50)}.jpg`,
-							)});`,
+							`  background-image: url("/bgs/bg-0${this.randNum(1, 50)}.webp");`,
 							"}",
 						].join("\n"),
 					}}
@@ -129,6 +127,10 @@ class IndexPage extends React.Component {
 	render() {
 		return (
 			<Layout location={this.props.location}>
+				<link
+					href="https://assets.calendly.com/assets/external/widget.css"
+					rel={"stylesheet"}
+				/>
 				<div
 					className={`body ${this.state.loading} ${
 						this.state.isArticleVisible ? "is-article-visible" : ""
@@ -175,14 +177,11 @@ export const Head = () => {
 					"max matthews, full stack developer, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto, lead instructor"
 				}
 			/>
-			<link
-				href="https://assets.calendly.com/assets/external/widget.css"
-				rel="stylesheet"
-			/>
 			<Script
 				src="https://assets.calendly.com/assets/external/widget.js"
 				type="text/javascript"
 			/>
+
 			<meta property="og:type" content="website" />
 			<meta property="og:image" content="https://maxmatthe.ws/og_image.png" />
 			<meta property="og:title" content="Max Matthews" />
