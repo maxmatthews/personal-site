@@ -1,4 +1,3 @@
-import card from "../assets/MatthewsMaxCard.pdf";
 import React, { Component } from "react";
 
 export default class Contact extends Component {
@@ -135,7 +134,7 @@ export default class Contact extends Component {
 					</li>
 					<li>
 						<a
-							href={card}
+							href={"/MatthewsMaxCard.pdf"}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="icon2 far fa-address-card"

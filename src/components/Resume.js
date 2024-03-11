@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import GraphicalResume from "../images/graphicalResume.png";
-import TextualResume from "../images/textualResume.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default class Resume extends Component {
 	render() {
@@ -27,7 +26,14 @@ export default class Resume extends Component {
 							);
 						}}
 					>
-						<img src={GraphicalResume} style={{ width: "90%" }} />
+						<StaticImage
+							src={"../images/graphicalResume.png"}
+							style={{ width: "90%" }}
+							alt={"graphical resume"}
+							placeholder="blurred"
+							width={336}
+							height={434}
+						/>
 						<button style={{ marginTop: 10 }}>Graphical (PDF)</button>
 					</div>
 					<div
@@ -36,7 +42,14 @@ export default class Resume extends Component {
 							window.open("https://resume.creddle.io/resume/gkf096723g5");
 						}}
 					>
-						<img src={TextualResume} style={{ width: "90%" }} />
+						<StaticImage
+							src={"../images/textualResume.png"}
+							style={{ width: "90%" }}
+							alt={"text based resume"}
+							placeholder="blurred"
+							width={336}
+							height={434}
+						/>
 						<button style={{ marginTop: 10 }}>Textual (Web)</button>
 					</div>
 				</div>

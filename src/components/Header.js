@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import maxVector from "../images/headshot.png";
-// import resume from '../assets/MatthewsMaxResume.pdf'
-import card from "../assets/MatthewsMaxCard.pdf";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header = (props) => (
 	<header id="header" style={props.timeout ? { display: "none" } : {}}>
 		<div className="logo">
 			{/*<span className="icon fa-diamond"></span>*/}
 			<span>
-				<img
-					style={{ height: "100%", marginTop: 5, marginLeft: -5 }}
-					src={maxVector}
-					alt="portrait of max matthews"
+				<StaticImage
+					src={"../images/headshot.png"}
+					alt={"portrait of max matthews"}
+					placeholder="blurred"
+					width={120}
+					height={115}
+					style={{ marginTop: 5, marginLeft: -5 }}
 				/>
 			</span>
 		</div>
@@ -123,7 +124,7 @@ const Header = (props) => (
 				</li>
 				<li>
 					<a
-						href={card}
+						href={"/MatthewsMaxCard.pdf"}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="icon2 far fa-address-card"
