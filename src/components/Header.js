@@ -142,8 +142,10 @@ const Header = (props) => (
 				</li>
 				<li>
 					<a
+						href={"/strengths"}
 						className="icon2 fad fa-dumbbell"
-						onClick={() => {
+						onClick={(event) => {
+							event.preventDefault();
 							props.onOpenArticle("strengths");
 						}}
 						style={{ cursor: "pointer" }}
