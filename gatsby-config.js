@@ -6,7 +6,6 @@ module.exports = {
 			"Max Matthews is CTO @ tuzag && Lead Instructor @ Careers in Code. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY.",
 	},
 	plugins: [
-		"gatsby-plugin-react-helmet",
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -31,11 +30,9 @@ module.exports = {
 				}, // option to add more headers. `Link` headers are transformed by the below criteria
 			},
 		},
-		{
-			resolve: `gatsby-plugin-google-analytics`,
-			options: {
-				trackingId: "UA-81233331-1",
-			},
-		},
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
+		{ resolve: `gatsby-plugin-purgecss`, develop: true },
 	],
 };
