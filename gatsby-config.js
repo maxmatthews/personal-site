@@ -34,5 +34,6 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		{ resolve: `gatsby-plugin-purgecss`, develop: true },
+		// "gatsby-plugin-webpack-bundle-analyser-v2",
 	],
 };

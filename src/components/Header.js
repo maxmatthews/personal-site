@@ -52,9 +52,11 @@ const Header = (props) => (
 						// href="https://mzmtech.com/MatthewsMaxResume.pdf"
 						// target="_blank"
 						// rel="noopener noreferrer"
-						onClick={() => {
+						onClick={(event) => {
+							event.preventDefault();
 							props.onOpenArticle("resume");
 						}}
+						href={"https://resume.creddle.io/resume/gkf096723g5"}
 					>
 						Resume
 					</a>
@@ -67,12 +69,14 @@ const Header = (props) => (
 				<li>
 					<a
 						className="headerLink"
-						onClick={() => {
+						onClick={(evt) => {
+							evt.preventDefault();
 							window.Calendly.initPopupWidget({
 								url: "https://calendly.com/maxmatthews",
 							});
 							return false;
 						}}
+						href={"https://calendly.com/maxmatthews"}
 						style={{ paddingLeft: 19, paddingRight: 19 }}
 					>
 						Calendar
@@ -98,6 +102,7 @@ const Header = (props) => (
 						target="_blank"
 						rel="noopener noreferrer"
 						className="icon2 fab fa-linkedin-in"
+						aria-label={"Max's Linked In Profile"}
 					>
 						<span className="label">LinkedIn</span>
 					</a>
@@ -108,6 +113,7 @@ const Header = (props) => (
 						target="_blank"
 						rel="noopener noreferrer"
 						className="icon2 fab fa-twitter"
+						aria-label={"Max's Twitter Profile"}
 					>
 						<span className="label">Twitter</span>
 					</a>
@@ -118,6 +124,7 @@ const Header = (props) => (
 						target="_blank"
 						rel="noopener noreferrer"
 						className="icon2 fab fa-github"
+						aria-label={"Max's GitHub Profile"}
 					>
 						<span className="label">GitHub</span>
 					</a>
@@ -128,6 +135,7 @@ const Header = (props) => (
 						target="_blank"
 						rel="noopener noreferrer"
 						className="icon2 far fa-address-card"
+						aria-label={"Max's Business Card"}
 					>
 						<span className="label">Business Card</span>
 					</a>
@@ -139,6 +147,7 @@ const Header = (props) => (
 							props.onOpenArticle("strengths");
 						}}
 						style={{ cursor: "pointer" }}
+						aria-label={"Max's Strength Quest Results"}
 					>
 						<span className="label">Strengths</span>
 					</a>
