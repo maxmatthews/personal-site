@@ -177,13 +177,13 @@ export const Head = () => {
 			<meta
 				name={"description"}
 				content={
-					"Max Matthews: Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY. CTO @ tuzag && Lead Instructor @ Careers In Code."
+					"Max Matthews: Full Stack Javascript Developer, Hacker, Mentor, & Entrepreneur. Syracuse, NY. CTO @ tuzag."
 				}
 			/>
 			<meta
 				name={"keywords"}
 				content={
-					"max matthews, full stack developer, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto, lead instructor"
+					"max matthews, full stack developer, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto"
 				}
 			/>
 			<Script
@@ -199,7 +199,7 @@ export const Head = () => {
 			<meta property="og:url" content="https://maxmatthe.ws" />
 			<meta
 				property="og:description"
-				content="Full stack javascript developer, hacker, mentor & entrepreneur."
+				content="Full stack javascript developer, hacker, mentor, & entrepreneur."
 			/>
 			<meta
 				property="og:video"

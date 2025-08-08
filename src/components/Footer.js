@@ -5,14 +5,14 @@ const Footer = (props) => (
 	<footer id="footer" style={props.timeout ? { display: "none" } : {}}>
 		<p className="copyright">
 			&copy; {new Date().getFullYear()}.{" "}
-			<span
+			<button
 				className="aTag"
 				onClick={() => {
 					props.onOpenArticle("credits");
 				}}
 			>
 				Credits.
-			</span>
+			</button>
 		</p>
 	</footer>
 );

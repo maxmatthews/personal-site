@@ -28,18 +28,19 @@ const Header = (props) => (
 						rel="noopener noreferrer"
 					>
 						tuzag
-					</a>{" "}
-					<code>&&</code> Lead Instructor @{" "}
-					<a
-						href={"https://careersincode.org"}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Careers In Code
 					</a>
+					{/*{" "}*/}
+					{/*<code>&&</code> Lead Instructor @{" "}*/}
+					{/*<a*/}
+					{/*	href={"https://careersincode.org"}*/}
+					{/*	target="_blank"*/}
+					{/*	rel="noopener noreferrer"*/}
+					{/*>*/}
+					{/*	Careers In Code*/}
+					{/*</a>*/}
 				</p>
 				<p>
-					Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur.
+					Full Stack Javascript Developer, Hacker, Mentor, & Entrepreneur.
 					Syracuse, NY.
 				</p>
 			</div>
@@ -82,14 +83,14 @@ const Header = (props) => (
 					</a>
 				</li>
 				<li>
-					<div
+					<button
 						className="headerLink"
 						onClick={() => {
 							props.onOpenArticle("contact");
 						}}
 					>
 						Contact
-					</div>
+					</button>
 				</li>
 			</ul>
 		</nav>
@@ -106,17 +107,17 @@ const Header = (props) => (
 						<span className="label">LinkedIn</span>
 					</a>
 				</li>
-				<li>
-					<a
-						href="https://twitter.com/teckno101"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="icon2 fab fa-twitter"
-						aria-label={"Max's Twitter Profile"}
-					>
-						<span className="label">Twitter</span>
-					</a>
-				</li>
+				{/*<li>*/}
+				{/*	<a*/}
+				{/*		href="https://twitter.com/teckno101"*/}
+				{/*		target="_blank"*/}
+				{/*		rel="noopener noreferrer"*/}
+				{/*		className="icon2 fab fa-twitter"*/}
+				{/*		aria-label={"Max's Twitter Profile"}*/}
+				{/*	>*/}
+				{/*		<span className="label">Twitter</span>*/}
+				{/*	</a>*/}
+				{/*</li>*/}
 				<li>
 					<a
 						href="https://github.com/maxmatthews/personal-site"
