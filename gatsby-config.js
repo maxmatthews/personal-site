@@ -3,7 +3,7 @@ module.exports = {
 		title: "Max Matthews",
 		author: "Max Matthews",
 		description:
-			"Max Matthews is CTO @ tuzag && Lead Instructor @ Careers in Code. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY.",
+			"Max Matthews is CTO @ tuzag. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY.",
 	},
 	plugins: [
 		{
@@ -18,7 +18,19 @@ module.exports = {
 				icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
 			},
 		},
-		"gatsby-plugin-sass",
+		{
+			resolve: `gatsby-plugin-sass`,
+			options: {
+				// Use the embedded implementation to avoid the legacy JS API
+				implementation: require("sass-embedded"),
+				sassOptions: {
+					includePaths: ["src/assets/scss"],
+					// Optional: temporarily silence warnings while upgrading other tooling
+					// silenceDeprecations: ["legacy-js-api"],
+				},
+			},
+		},
+
 		"gatsby-plugin-offline",
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,

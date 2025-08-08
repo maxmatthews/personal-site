@@ -54,8 +54,14 @@ export default class Contact extends Component {
 					>
 						<input type="hidden" name="form-name" value="contact" />
 						<div style={{ display: "none" }}>
-							<label>Don’t fill this out if you're human: </label>
-							<input name="bot-field" onChange={this.handleChange} />
+							<label htmlFor={"bot"}>
+								Don’t fill this out if you're human:{" "}
+							</label>
+							<input
+								name="bot-field"
+								onChange={this.handleChange}
+								id={"bot-field"}
+							/>
 						</div>
 						<div className="field half first">
 							<label htmlFor="name">Name</label>
@@ -102,16 +108,16 @@ export default class Contact extends Component {
 							<span className="label">LinkedIn</span>
 						</a>
 					</li>
-					<li>
-						<a
-							href="https://twitter.com/teckno101"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="icon2 fab fa-twitter"
-						>
-							<span className="label">Twitter</span>
-						</a>
-					</li>
+					{/*<li>*/}
+					{/*	<a*/}
+					{/*		href="https://twitter.com/teckno101"*/}
+					{/*		target="_blank"*/}
+					{/*		rel="noopener noreferrer"*/}
+					{/*		className="icon2 fab fa-twitter"*/}
+					{/*	>*/}
+					{/*		<span className="label">Twitter</span>*/}
+					{/*	</a>*/}
+					{/*</li>*/}
 					<li>
 						<a
 							href="https://medium.maxmatthe.ws"

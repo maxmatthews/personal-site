@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Contact from "./Contact";
 import Credits from "./Credits";
 import Strengths from "./Strengths";
-import Resume from "./Resume";
+// import Resume from "./Resume";
 import GetOnlineWorkshop from "./GetOnlineWorkshop";
 
 class Main extends Component {
@@ -13,7 +13,7 @@ class Main extends Component {
 
 	render() {
 		let close = (
-			<div
+			<button
 				className="close"
 				onClick={() => {
 					this.props.onCloseArticle();
@@ -22,6 +22,7 @@ class Main extends Component {
 						this.setState({ formSubmitted: false });
 					}, 500);
 				}}
+				aria-label="Close"
 			/>
 		);
 
@@ -43,11 +44,11 @@ class Main extends Component {
 					close={close}
 				/>
 
-				<Resume
-					article={this.props.article}
-					articleTimeout={this.props.articleTimeout}
-					close={close}
-				/>
+				{/*<Resume*/}
+				{/*	article={this.props.article}*/}
+				{/*	articleTimeout={this.props.articleTimeout}*/}
+				{/*	close={close}*/}
+				{/*/>*/}
 
 				<Strengths
 					article={this.props.article}
