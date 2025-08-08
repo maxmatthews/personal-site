@@ -49,14 +49,13 @@ const Header = (props) => (
 				<li>
 					<a
 						className="headerLink"
-						// href="https://mzmtech.com/MatthewsMaxResume.pdf"
-						// target="_blank"
-						// rel="noopener noreferrer"
-						onClick={(event) => {
-							event.preventDefault();
-							props.onOpenArticle("resume");
-						}}
-						href={"https://resume.creddle.io/resume/gkf096723g5"}
+						href="/MatthewsMaxResume.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						// onClick={(event) => {
+						// 	event.preventDefault();
+						// 	props.onOpenArticle("resume");
+						// }}
 					>
 						Resume
 					</a>
