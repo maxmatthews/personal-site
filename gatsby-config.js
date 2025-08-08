@@ -20,16 +20,6 @@ module.exports = {
 		},
 		"gatsby-plugin-sass",
 		"gatsby-plugin-offline",
-		{
-			resolve: `gatsby-plugin-netlify`,
-			options: {
-				headers: {
-					"/*": [
-						"Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
-					],
-				}, // option to add more headers. `Link` headers are transformed by the below criteria
-			},
-		},
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
