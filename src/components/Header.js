@@ -62,7 +62,12 @@ const Header = (props) => (
 					</a>
 				</li>
 				<li>
-					<a className="headerLink" href="https://medium.maxmatthe.ws">
+					<a
+						className="headerLink"
+						href="https://medium.maxmatthe.ws"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Blog
 					</a>
 				</li>
