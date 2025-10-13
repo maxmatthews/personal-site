@@ -42,8 +42,8 @@ const Header = (props) => (
 				</p>
 				<p>Full Stack Javascript Developer, Hacker, Mentor, & Entrepreneur.</p>
 				<p>
-					Pursuing full-time, part-time, or 1099 contract roles: in person,
-					remote work, or relocation.
+					Pursuing full-time, part-time, or 1099 contract roles. In person,
+					remote, or relocation.
 				</p>
 			</div>
 		</div>
