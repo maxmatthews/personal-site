@@ -29,6 +29,7 @@ const Header = (props) => (
 					>
 						tuzag
 					</a>
+					. Syracuse, NY.
 					{/*{" "}*/}
 					{/*<code>&&</code> Lead Instructor @{" "}*/}
 					{/*<a*/}
@@ -39,9 +40,10 @@ const Header = (props) => (
 					{/*	Careers In Code*/}
 					{/*</a>*/}
 				</p>
+				<p>Full Stack Javascript Developer, Hacker, Mentor, & Entrepreneur.</p>
 				<p>
-					Full Stack Javascript Developer, Hacker, Mentor, & Entrepreneur.
-					Syracuse, NY.
+					Pursuing full-time, part-time, or 1099 contract roles: in person,
+					remote work, or relocation.
 				</p>
 			</div>
 		</div>
