@@ -1,3 +1,5 @@
+const adapter = require("gatsby-adapter-netlify").default;
+
 module.exports = {
 	siteMetadata: {
 		title: "Max Matthews",
@@ -38,4 +40,8 @@ module.exports = {
 		{ resolve: `gatsby-plugin-purgecss`, develop: true },
 		// "gatsby-plugin-webpack-bundle-analyser-v2",
 	],
+	adapter: adapter({
+		excludeDatastoreFromEngineFunction: false,
+		imageCDN: false,
+	}),
 };
