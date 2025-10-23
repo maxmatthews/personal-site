@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { getBackgroundImage } from "../../utils/background";
 import { navigate } from "@gatsbyjs/reach-router";
 import { StaticImage } from "gatsby-plugin-image";
+import { projects } from "/src/utils/projects";
 
 const TuzagPage = () => {
 	const [bgImage, setBgImage] = useState("");
@@ -22,50 +23,10 @@ const TuzagPage = () => {
 		return () => clearTimeout(timer);
 	}, []);
 
-	let companyProjects = [
-		{
-			id: 1,
-			title: "tuzag Development Studio",
-			description:
-				"Agentic AI CMS (content management system) for building conversational relationships.",
-			image: (
-				<StaticImage
-					src={"../../images/tcs-screenshot.svg"}
-					alt={`tuzag Development Studio screenshot`}
-					className="project-screenshot"
-				/>
-			),
-			technologies: [
-				"React",
-				"Node.js",
-				"Meteor",
-				"Mongo",
-				"Conversational AI Integrations",
-			],
-			slug: "tuzag-platform",
-		},
-		{
-			id: 2,
-			title: "tuzag Content API",
-			description: "RESTful API for generating content stored in headless CMS.",
-			image: (
-				<StaticImage
-					src={"../../images/tuzag-content-api-diagram.svg"}
-					alt={`tuzag Content API screenshot`}
-					className="project-screenshot"
-				/>
-			),
-			technologies: [
-				"Node.js",
-				"Express",
-				"MongoDB",
-				"AI/ML",
-				"REST API",
-				"Microservices",
-			],
-			slug: "tuzag-content-api",
-		},
-	];
+	// Filter projects by company
+	const companyProjects = projects.filter(
+		(project) => project.company === "tuzag",
+	);
 
 	return (
 		<Layout>

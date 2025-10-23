@@ -4,8 +4,8 @@ import Layout from "../components/layout";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import { getBackgroundImage, clearBackgroundImage } from "../utils/background";
-import PortfolioSection from "../components/PortfolioSection";
+import { getBackgroundImage } from "../utils/background";
+import PortfolioSection from "../pages/portfolio/PortfolioSection";
 
 const IndexPage = ({ location }) => {
 	const [isArticleVisible, setIsArticleVisible] = useState(false);
