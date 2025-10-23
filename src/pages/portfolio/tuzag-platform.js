@@ -93,7 +93,7 @@ const TuzagPlatformPage = () => {
 							>
 								<div className="project-image-large">
 									<StaticImage
-										src="../../images/tcs-screenshot.svg"
+										src="../../images/tcs-screenshot.png"
 										alt="tuzag Development Studio Screenshot"
 										className="project-screenshot"
 									/>

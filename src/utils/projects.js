@@ -9,7 +9,7 @@ export const projects = [
 			"Agentic AI CMS (content management system) for building conversational relationships.",
 		image: (
 			<StaticImage
-				src={"../images/tcs-screenshot.svg"}
+				src={"../images/tcs-screenshot.png"}
 				alt={`tuzag Development Studio screenshot`}
 				className="project-screenshot"
 			/>
