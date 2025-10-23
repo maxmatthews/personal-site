@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import { Script } from "gatsby";
+import { getBackgroundImage } from "../utils/background";
 
 class IndexPage extends React.Component {
 	constructor(props) {
@@ -17,11 +18,14 @@ class IndexPage extends React.Component {
 			loading: "is-loading",
 			style: "",
 			cssLoaded: false,
+			isModalOpen: false,
 		};
 		this.handleOpenArticle = this.handleOpenArticle.bind(this);
 		this.handleCloseArticle = this.handleCloseArticle.bind(this);
 		this.setWrapperRef = this.setWrapperRef.bind(this);
 		this.handleClickOutside = this.handleClickOutside.bind(this);
+		this.handleOpenModal = this.handleOpenModal.bind(this);
+		this.handleCloseModal = this.handleCloseModal.bind(this);
 	}
 
 	componentDidMount() {
@@ -54,19 +58,22 @@ class IndexPage extends React.Component {
 			this.handleOpenArticle("getOnlineWorkshop");
 		}
 
-		this.setState({
-			style: (
-				<style
-					dangerouslySetInnerHTML={{
-						__html: [
-							"#bg:after {",
-							`  background-image: url("/bgs/bg-0${this.randNum(1, 50)}.webp");`,
-							"}",
-						].join("\n"),
-					}}
-				/>
-			),
-		});
+		const bgImage = getBackgroundImage();
+		if (bgImage) {
+			this.setState({
+				style: (
+					<style
+						dangerouslySetInnerHTML={{
+							__html: [
+								"#bg:after {",
+								`  background-image: url("${bgImage}");`,
+								"}",
+							].join("\n"),
+						}}
+					/>
+				),
+			});
+		}
 	}
 
 	componentWillUnmount() {
@@ -126,6 +133,14 @@ class IndexPage extends React.Component {
 		}
 	}
 
+	handleOpenModal() {
+		this.setState({ isModalOpen: true });
+	}
+
+	handleCloseModal() {
+		this.setState({ isModalOpen: false });
+	}
+
 	randNum(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
@@ -149,6 +164,7 @@ class IndexPage extends React.Component {
 					<div id="wrapper">
 						<Header
 							onOpenArticle={this.handleOpenArticle}
+							onOpenModal={this.handleOpenModal}
 							timeout={this.state.timeout}
 						/>
 						<Main
@@ -165,6 +181,45 @@ class IndexPage extends React.Component {
 						/>
 					</div>
 					<div id="bg" />
+
+					{/* Calendly Modal */}
+					{this.state.isModalOpen && (
+						<div className="modal-overlay" onClick={this.handleCloseModal}>
+							<div
+								className="modal-content"
+								onClick={(e) => e.stopPropagation()}
+							>
+								<button
+									className="modal-close"
+									onClick={this.handleCloseModal}
+									aria-label="Close modal"
+								>
+									<svg
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M18 6L6 18M6 6l12 12"
+											stroke="currentColor"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
+								</button>
+								<iframe
+									src="https://calendly.com/maxmatthews"
+									width="100%"
+									height="600"
+									frameBorder="0"
+									title="Book a Meeting"
+								></iframe>
+							</div>
+						</div>
+					)}
 				</div>
 			</Layout>
 		);
