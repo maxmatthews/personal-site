@@ -3,7 +3,7 @@ import Contact from "./Contact";
 import Credits from "./Credits";
 import Strengths from "./Strengths";
 // import Resume from "./Resume";
-import GetOnlineWorkshop from "./GetOnlineWorkshop";
+// import GetOnlineWorkshop from "./GetOnlineWorkshop";
 
 class Main extends Component {
 	constructor(props) {
@@ -56,11 +56,11 @@ class Main extends Component {
 					close={close}
 				/>
 
-				<GetOnlineWorkshop
-					article={this.props.article}
-					articleTimeout={this.props.articleTimeout}
-					close={close}
-				/>
+				{/*<GetOnlineWorkshop*/}
+				{/*	article={this.props.article}*/}
+				{/*	articleTimeout={this.props.articleTimeout}*/}
+				{/*	close={close}*/}
+				{/*/>*/}
 			</div>
 		);
 	}
