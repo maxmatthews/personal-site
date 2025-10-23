@@ -273,7 +273,7 @@ export const Head = () => {
 				}
 			/>
 			<meta property="og:type" content="website" />
-			<meta property="og:image" content="https://maxmatthe.ws/og_image.png" />
+			<meta property="og:image" content="/og_image.png" />
 			<meta property="og:title" content="Max Matthews" />
 			<meta property="og:image:width" content="1832" />
 			<meta property="og:image:height" content="922" />
