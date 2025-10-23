@@ -25,6 +25,28 @@ export const projects = [
 		company: "tuzag",
 	},
 	{
+		id: 4,
+		title: "Ask Jaime (RAG)",
+		description:
+			"AI-powered digital concierge demonstrating advanced RAG implementation and conversational storytelling",
+		technologies: [
+			"RAG (Retrieval-Augmented Generation)",
+			"Conversational AI",
+			"Behavioral Science",
+			"React",
+			"Express Sockets",
+		],
+		slug: "tuzag-ask-jaime",
+		image: (
+			<StaticImage
+				src={"../images/jaime-screenshot.png"}
+				alt={`Ask Jaime website screenshot`}
+				className="project-screenshot"
+			/>
+		),
+		company: "tuzag",
+	},
+	{
 		id: 2,
 		title: "tuzag Content API",
 		description: "RESTful API for generating content stored in headless CMS.",
