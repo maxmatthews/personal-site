@@ -5,9 +5,7 @@ export default class Credits extends Component {
 		return (
 			<article
 				id="credits"
-				className={`${
-					this.props.article === "getOnlineWorkshop" ? "active" : ""
-				} ${this.props.articleTimeout ? "timeout" : ""}`}
+				className={this.props.articleTimeout ? "timeout" : ""} //this.props.article === "getOnlineWorkshop" ? "active" : ""
 				style={{ display: "none" }}
 			>
 				<h2 className="major">Get Online Workshop</h2>

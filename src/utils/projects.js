@@ -50,7 +50,7 @@ export const projects = [
 		id: 3,
 		title: "Careers In Code Bootcamp",
 		description:
-			"6-month full-stack JavaScript bootcamp with modernized curriculum incorporating AI tools and APIs",
+			"6-month full-stack JavaScript bootcamp with modernized curriculum incorporating AI tools and APIs.",
 		image: (
 			<StaticImage
 				src={"../images/careers-in-code.jpg"}
