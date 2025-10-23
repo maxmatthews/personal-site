@@ -1,230 +1,251 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Layout from "../components/layout";
 
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import { Script } from "gatsby";
-import { getBackgroundImage } from "../utils/background";
+import { getBackgroundImage, clearBackgroundImage } from "../utils/background";
+import PortfolioSection from "../components/PortfolioSection";
 
-class IndexPage extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isArticleVisible: false,
-			timeout: false,
-			articleTimeout: false,
-			article: "",
-			loading: "is-loading",
-			style: "",
-			cssLoaded: false,
-			isModalOpen: false,
-		};
-		this.handleOpenArticle = this.handleOpenArticle.bind(this);
-		this.handleCloseArticle = this.handleCloseArticle.bind(this);
-		this.setWrapperRef = this.setWrapperRef.bind(this);
-		this.handleClickOutside = this.handleClickOutside.bind(this);
-		this.handleOpenModal = this.handleOpenModal.bind(this);
-		this.handleCloseModal = this.handleCloseModal.bind(this);
-	}
+const IndexPage = ({ location }) => {
+	const [isArticleVisible, setIsArticleVisible] = useState(false);
+	const [timeout, setTimeoutState] = useState(false);
+	const [articleTimeout, setArticleTimeout] = useState(false);
+	const [article, setArticle] = useState("");
+	const [loading, setLoading] = useState("is-loading");
+	const [style, setStyle] = useState("");
+	const [cssLoaded, setCssLoaded] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [arrowVisible, setArrowVisible] = useState(true);
+	const wrapperRef = useRef(null);
+	const portfolioRef = useRef(null);
 
-	componentDidMount() {
-		this.setState({ cssLoaded: true });
-		this.timeoutId = setTimeout(() => {
-			this.setState({ loading: "" });
+	useEffect(() => {
+		setCssLoaded(true);
+		const timeoutId = setTimeout(() => {
+			setLoading("");
 		}, 100);
-		document.addEventListener("mousedown", this.handleClickOutside);
+
+		document.addEventListener("mousedown", handleClickOutside);
 
 		let vars = {};
-		window.location.href.replace(
-			/[?&]+([^=&]+)=([^&]*)/gi,
-			function (m, key, value) {
-				vars[key] = value;
-			},
-		);
+		window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m, key, value) => {
+			vars[key] = value;
+		});
 
 		if (vars.redirectFrom === "/resume") {
-			this.handleOpenArticle("resume");
+			handleOpenArticle("resume");
 		}
 
 		if (vars.redirectFrom === "/strengths") {
-			this.handleOpenArticle("strengths");
+			handleOpenArticle("strengths");
+		}
+
+		console.log(vars.redirectFrom === "portfolio");
+		if (vars.redirectFrom === "portfolio") {
+			if (portfolioRef.current) {
+				setTimeout(() => {
+					portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+				}, 500);
+			}
 		}
 
 		if (
 			vars.redirectFrom &&
 			vars.redirectFrom.toLowerCase() === "/getonlineworkshop"
 		) {
-			this.handleOpenArticle("getOnlineWorkshop");
+			handleOpenArticle("getOnlineWorkshop");
 		}
 
 		const bgImage = getBackgroundImage();
 		if (bgImage) {
-			this.setState({
-				style: (
-					<style
-						dangerouslySetInnerHTML={{
-							__html: [
-								"#bg:after {",
-								`  background-image: url("${bgImage}");`,
-								"}",
-							].join("\n"),
-						}}
-					/>
-				),
-			});
+			setStyle(
+				<style
+					dangerouslySetInnerHTML={{
+						__html: [
+							"#bg:after {",
+							`  background-image: url("${bgImage}");`,
+							"}",
+						].join("\n"),
+					}}
+				/>,
+			);
 		}
-	}
 
-	componentWillUnmount() {
-		if (this.timeoutId) {
-			clearTimeout(this.timeoutId);
-		}
-		document.removeEventListener("mousedown", this.handleClickOutside);
-	}
+		window.addEventListener("scroll", handleScroll);
 
-	setWrapperRef(node) {
-		this.wrapperRef = node;
-	}
+		return () => {
+			clearTimeout(timeoutId);
+			document.removeEventListener("mousedown", handleClickOutside);
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
-	handleOpenArticle(article) {
-		this.setState({
-			isArticleVisible: !this.state.isArticleVisible,
-			article,
-		});
-
+	const handleOpenArticle = (article) => {
+		setIsArticleVisible(true);
+		setArticle(article);
+		setTimeoutState(true);
 		setTimeout(() => {
-			this.setState({
-				timeout: !this.state.timeout,
-			});
-		}, 325);
-
-		setTimeout(() => {
-			this.setState({
-				articleTimeout: !this.state.articleTimeout,
-			});
+			setArticleTimeout(true);
 		}, 350);
-	}
+	};
 
-	handleCloseArticle() {
-		this.setState({
-			articleTimeout: !this.state.articleTimeout,
-		});
-
+	const handleCloseArticle = () => {
+		setArticleTimeout(false);
 		setTimeout(() => {
-			this.setState({
-				timeout: !this.state.timeout,
-			});
-		}, 325);
-
-		setTimeout(() => {
-			this.setState({
-				isArticleVisible: !this.state.isArticleVisible,
-				article: "",
-			});
+			setIsArticleVisible(false);
+			setArticle("");
+			setTimeoutState(false);
 		}, 350);
-	}
+	};
 
-	handleClickOutside(event) {
-		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-			if (this.state.isArticleVisible) {
-				this.handleCloseArticle();
+	const handleClickOutside = (event) => {
+		if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+			if (isArticleVisible) {
+				handleCloseArticle();
 			}
 		}
-	}
+	};
 
-	handleOpenModal() {
-		this.setState({ isModalOpen: true });
-	}
+	const handleOpenModal = () => {
+		setIsModalOpen(true);
+	};
 
-	handleCloseModal() {
-		this.setState({ isModalOpen: false });
-	}
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+	};
 
-	randNum(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
+	const handleScroll = () => {
+		setArrowVisible(window.scrollY < 100);
+	};
 
-	render() {
-		return (
-			<Layout location={this.props.location}>
-				{this.state.cssLoaded && (
-					<link
-						rel="stylesheet"
-						href="https://assets.calendly.com/assets/external/widget.css"
+	return (
+		<Layout location={location}>
+			{cssLoaded && (
+				<link
+					rel="stylesheet"
+					href="https://assets.calendly.com/assets/external/widget.css"
+				/>
+			)}
+
+			<div
+				className={`body ${loading} ${isArticleVisible ? "is-article-visible" : ""}`}
+			>
+				{style}
+				<div id="wrapper">
+					<Header
+						onOpenArticle={handleOpenArticle}
+						onOpenModal={handleOpenModal}
+						timeout={timeout}
+						onScrollToPortfolio={() => {
+							if (portfolioRef.current) {
+								portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+							}
+						}}
 					/>
-				)}
-
-				<div
-					className={`body ${this.state.loading} ${
-						this.state.isArticleVisible ? "is-article-visible" : ""
-					}`}
-				>
-					{this.state.style}
-					<div id="wrapper">
-						<Header
-							onOpenArticle={this.handleOpenArticle}
-							onOpenModal={this.handleOpenModal}
-							timeout={this.state.timeout}
-						/>
-						<Main
-							isArticleVisible={this.state.isArticleVisible}
-							timeout={this.state.timeout}
-							articleTimeout={this.state.articleTimeout}
-							article={this.state.article}
-							onCloseArticle={this.handleCloseArticle}
-							setWrapperRef={this.setWrapperRef}
-						/>
-						<Footer
-							timeout={this.state.timeout}
-							onOpenArticle={this.handleOpenArticle}
-						/>
-					</div>
-					<div id="bg" />
-
-					{/* Calendly Modal */}
-					{this.state.isModalOpen && (
-						<div className="modal-overlay" onClick={this.handleCloseModal}>
-							<div
-								className="modal-content"
-								onClick={(e) => e.stopPropagation()}
-							>
-								<button
-									className="modal-close"
-									onClick={this.handleCloseModal}
-									aria-label="Close modal"
-								>
-									<svg
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M18 6L6 18M6 6l12 12"
-											stroke="currentColor"
-											strokeWidth="2"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-										/>
-									</svg>
-								</button>
-								<iframe
-									src="https://calendly.com/maxmatthews"
-									width="100%"
-									height="600"
-									frameBorder="0"
-									title="Book a Meeting"
-								></iframe>
-							</div>
-						</div>
-					)}
+					<Main
+						isArticleVisible={isArticleVisible}
+						timeout={timeout}
+						articleTimeout={articleTimeout}
+						article={article}
+						onCloseArticle={handleCloseArticle}
+						setWrapperRef={wrapperRef}
+					/>
+					<Footer timeout={timeout} onOpenArticle={handleOpenArticle} />
 				</div>
-			</Layout>
-		);
-	}
-}
+
+				{/* Arrow down button that scrolls to portfolio */}
+				<div
+					className={`arrow-down-container`}
+					style={{
+						visibility: arrowVisible ? "visible" : "hidden",
+						position: "fixed",
+						left: "50%",
+						transform: "translateX(-50%)",
+						bottom: 60,
+						zIndex: 60,
+					}}
+				>
+					<button
+						aria-label="Scroll to portfolio"
+						className="arrow-down"
+						onClick={() => {
+							if (portfolioRef.current) {
+								portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+							}
+						}}
+						style={{
+							background: "transparent",
+							border: "none",
+							cursor: "pointer",
+							color: "white",
+							fontSize: 28,
+						}}
+					>
+						{/* simple caret down svg */}
+						<svg
+							width="36"
+							height="36"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M6 9l6 6 6-6"
+								stroke="currentColor"
+								strokeWidth="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+						</svg>
+					</button>
+				</div>
+
+				{/* Portfolio section rendered below the fold */}
+				<div ref={portfolioRef}>
+					<PortfolioSection id="portfolio-section-home" />
+				</div>
+				<div id="bg" />
+
+				{/* Calendly Modal */}
+				{isModalOpen && (
+					<div className="modal-overlay" onClick={handleCloseModal}>
+						<div className="modal-content" onClick={(e) => e.stopPropagation()}>
+							<button
+								className="modal-close"
+								onClick={handleCloseModal}
+								aria-label="Close modal"
+							>
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M18 6L6 18M6 6l12 12"
+										stroke="currentColor"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
+								</svg>
+							</button>
+							<iframe
+								src="https://calendly.com/maxmatthews"
+								width="100%"
+								height="600"
+								frameBorder="0"
+								title="Book a Meeting"
+							></iframe>
+						</div>
+					</div>
+				)}
+			</div>
+		</Layout>
+	);
+};
 
 export const Head = () => {
 	return (
@@ -241,11 +262,6 @@ export const Head = () => {
 					"max matthews, full stack developer, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto"
 				}
 			/>
-			<Script
-				src="https://assets.calendly.com/assets/external/widget.js"
-				type="text/javascript"
-			/>
-
 			<meta property="og:type" content="website" />
 			<meta property="og:image" content="https://maxmatthe.ws/og_image.png" />
 			<meta property="og:title" content="Max Matthews" />

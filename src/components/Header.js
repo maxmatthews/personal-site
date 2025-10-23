@@ -69,9 +69,23 @@ const Header = (props) => {
 						</a>
 					</li>
 					<li>
-						<Link className="headerLink" to="/portfolio">
-							Portfolio
-						</Link>
+						{props.onScrollToPortfolio ? (
+							<button
+								className="headerLink"
+								onClick={() => props.onScrollToPortfolio()}
+								style={{
+									background: "none",
+									border: "none",
+									cursor: "pointer",
+								}}
+							>
+								Portfolio
+							</button>
+						) : (
+							<Link className="headerLink" to="/portfolio">
+								Portfolio
+							</Link>
+						)}
 					</li>
 					<li>
 						<a
