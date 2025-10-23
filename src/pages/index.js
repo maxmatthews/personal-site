@@ -20,6 +20,11 @@ const IndexPage = ({ location }) => {
 	const wrapperRef = useRef(null);
 	const portfolioRef = useRef(null);
 
+	// Helper to determine arrow visibility
+	const computeArrowVisible = () => {
+		return window.innerWidth >= 576 && window.scrollY < 1;
+	};
+
 	useEffect(() => {
 		setCssLoaded(true);
 		const timeoutId = setTimeout(() => {
@@ -64,7 +69,7 @@ const IndexPage = ({ location }) => {
 					dangerouslySetInnerHTML={{
 						__html: [
 							"#bg:after {",
-							`  background-image: url("${bgImage}");`,
+							`  background-image: url(\"${bgImage}\");`,
 							"}",
 						].join("\n"),
 					}}
@@ -72,12 +77,19 @@ const IndexPage = ({ location }) => {
 			);
 		}
 
-		window.addEventListener("scroll", handleScroll);
+		const handleArrowVisibility = () => {
+			setArrowVisible(computeArrowVisible());
+		};
+
+		handleArrowVisibility(); // Set initial state
+		window.addEventListener("scroll", handleArrowVisibility);
+		window.addEventListener("resize", handleArrowVisibility);
 
 		return () => {
 			clearTimeout(timeoutId);
 			document.removeEventListener("mousedown", handleClickOutside);
-			window.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("scroll", handleArrowVisibility);
+			window.removeEventListener("resize", handleArrowVisibility);
 		};
 	}, []);
 
@@ -113,10 +125,6 @@ const IndexPage = ({ location }) => {
 
 	const handleCloseModal = () => {
 		setIsModalOpen(false);
-	};
-
-	const handleScroll = () => {
-		setArrowVisible(window.scrollY < 100);
 	};
 
 	return (
