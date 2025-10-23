@@ -7,6 +7,7 @@ import { projects } from "/src/utils/projects";
 const PortfolioSection = ({ id = "portfolio-section" }) => {
 	const [bgImage, setBgImage] = useState("");
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [visibleParagraphs, setVisibleParagraphs] = useState(1);
 
 	useEffect(() => {
 		// Use the same background image as the homepage
@@ -61,28 +62,62 @@ const PortfolioSection = ({ id = "portfolio-section" }) => {
 									requirements, agile execution, and a relentless focus on
 									delivering value.
 								</p>
-								<p>
-									Syracuse has been home for over a decade now, ever since I
-									stayed after finishing my time at Syracuse University. While
-									half my career has been remote, I'm open to relocation
-									opportunnites. My dog Stella has been my constant companion
-									through most of that journey, and when I'm not coding or
-									leading technical strategy at tuzag, you'll find me knee-deep
-									in a DIY project on my house or helping a friend troubleshoot
-									theirs. I approach everything—whether it's software
-									architecture or home renovation—through the lens of the
-									software development lifecycle: plan, build, test, iterate,
-									and ship.
-								</p>
-								<p>
-									I thrive in environments where I can wear multiple hats,
-									bridge the gap between technical execution and business
-									strategy, and empower teams to do their best work. Whether I'm
-									integrating third-party LLMs, modernizing bootcamp curricula
-									with AI tools, or validating product-market fit with rapid
-									prototypes, my goal is always the same: build something that
-									matters, ship it fast, and make it better along the way.
-								</p>
+								{visibleParagraphs >= 2 && (
+									<p>
+										Syracuse has been home for over a decade now, ever since I
+										stayed after finishing my time at Syracuse University. While
+										half my career has been remote, I'm open to relocation
+										opportunnites. My dog Stella has been my constant companion
+										through most of that journey, and when I'm not coding or
+										leading technical strategy at tuzag, you'll find me
+										knee-deep in a DIY project on my house or helping a friend
+										troubleshoot theirs. I approach everything—whether it's
+										software architecture or home renovation—through the lens of
+										the software development lifecycle: plan, build, test,
+										iterate, and ship.
+									</p>
+								)}
+								{visibleParagraphs >= 3 && (
+									<p>
+										I thrive in environments where I can wear multiple hats,
+										bridge the gap between technical execution and business
+										strategy, and empower teams to do their best work. Whether
+										I'm integrating third-party LLMs, modernizing bootcamp
+										curricula with AI tools, or validating product-market fit
+										with rapid prototypes, my goal is always the same: build
+										something that matters, ship it fast, and make it better
+										along the way.
+									</p>
+								)}
+								<div className="about-controls">
+									{visibleParagraphs === 1 && (
+										<button
+											className="read-more-button"
+											onClick={() => setVisibleParagraphs(2)}
+											aria-expanded="false"
+										>
+											Read more
+										</button>
+									)}
+									{visibleParagraphs === 2 && (
+										<button
+											className="read-more-button"
+											onClick={() => setVisibleParagraphs(3)}
+											aria-expanded="true"
+										>
+											Read more
+										</button>
+									)}
+									{visibleParagraphs === 3 && (
+										<button
+											className="collapse-button"
+											onClick={() => setVisibleParagraphs(1)}
+											aria-expanded="true"
+										>
+											Collapse
+										</button>
+									)}
+								</div>
 							</div>
 							<div className="about-image">
 								<StaticImage
