@@ -273,15 +273,11 @@ export const Head = () => {
 				}
 			/>
 			<meta property="og:type" content="website" />
-			<meta property="og:image" content="/og_image.png" />
+			<meta property="og:image" content="https://maxmatthe.ws/og_image.png" />
 			<meta property="og:title" content="Max Matthews" />
-			<meta property="og:image:width" content="1832" />
-			<meta property="og:image:height" content="922" />
+			<meta property="og:image:width" content="3600" />
+			<meta property="og:image:height" content="1890" />
 			<meta property="og:url" content="https://maxmatthe.ws" />
-			<meta
-				property="og:description"
-				content="Applied AI Full Stack Javascript Developer. Mentor, Hacker, & Entrepreneur."
-			/>
 			<title>Max Matthews</title>
 		</>
 	);
