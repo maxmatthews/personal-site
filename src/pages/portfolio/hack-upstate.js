@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { getBackgroundImage } from "../../utils/background";
 import { navigate } from "@gatsbyjs/reach-router";
 import { StaticImage } from "gatsby-plugin-image";
+import { projects } from "/src/utils/projects";
 
 const HackUpstatePage = () => {
 	const [bgImage, setBgImage] = useState("");
@@ -22,35 +23,10 @@ const HackUpstatePage = () => {
 		return () => clearTimeout(timer);
 	}, []);
 
-	const companyProjects = [
-		{
-			id: 1,
-			title: "Careers in Code Bootcamp",
-			description:
-				"6-month full-stack JavaScript bootcamp with modernized curriculum incorporating AI tools and APIs",
-			technologies: ["JavaScript", "React", "Node.js", "AI Tools", "LMS"],
-			slug: "careers-in-code",
-			image: (
-				<StaticImage
-					src={"../../images/careers-in-code.jpg"}
-					alt={`Careers In Code logo`}
-					className="project-screenshot"
-				/>
-			),
-		},
-		// {
-		// 	id: 2,
-		// 	title: "Student Pipeline Development",
-		// 	description:
-		// 		"Built student pipelines into tech careers through code reviews, project-based learning, and career mentorship",
-		// 	technologies: [
-		// 		"Mentoring",
-		// 		"Career Development",
-		// 		"Project-Based Learning",
-		// 	],
-		// 	slug: "mobile-app",
-		// },
-	];
+	// Filter projects by company
+	const companyProjects = projects.filter(
+		(project) => project.company === "hack-upstate",
+	);
 
 	return (
 		<Layout>
