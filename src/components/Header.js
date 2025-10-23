@@ -82,9 +82,7 @@ const Header = (props) => {
 								Portfolio
 							</button>
 						) : (
-							<Link className="headerLink" to="/portfolio">
-								Portfolio
-							</Link>
+							<span className="headerLink">Portfolio</span>
 						)}
 					</li>
 					<li>
