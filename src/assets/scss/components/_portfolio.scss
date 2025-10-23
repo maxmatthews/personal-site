@@ -250,6 +250,9 @@
 		}
 
 		.company-projects {
+			gap: 0.5rem;
+			display: flex;
+			flex-wrap: wrap;
 			.project-count {
 				background: rgba(102, 126, 234, 0.2);
 				padding: 0.5rem 1rem;
@@ -963,6 +966,7 @@
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			gap: 2rem;
 			margin-top: 2rem;
+			justify-items: center;
 
 			@media (min-width: 1200px) {
 				grid-template-columns: repeat(2, 1fr);

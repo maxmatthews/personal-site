@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { getBackgroundImage } from "../../utils/background";
+import { navigate } from "@gatsbyjs/reach-router";
 
 const TuzagContentApiPage = () => {
 	const project = {
@@ -56,7 +57,12 @@ const TuzagContentApiPage = () => {
 			)}
 			<div className="body">
 				<div id="wrapper">
-					<Link to="/portfolio" className="back-button-fixed">
+					<span
+						onClick={() => {
+							navigate(-1);
+						}}
+						className="back-button-fixed"
+					>
 						<svg
 							width="24"
 							height="24"
@@ -72,7 +78,7 @@ const TuzagContentApiPage = () => {
 								strokeLinejoin="round"
 							/>
 						</svg>
-					</Link>
+					</span>
 					<div className={`project-details-page ${isLoaded ? "loaded" : ""}`}>
 						<div
 							className={`project-header ${isLoaded ? "animate-fade-in-up" : ""}`}
