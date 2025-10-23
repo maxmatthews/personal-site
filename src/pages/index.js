@@ -33,32 +33,34 @@ const IndexPage = ({ location }) => {
 
 		document.addEventListener("mousedown", handleClickOutside);
 
-		let vars = {};
-		window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m, key, value) => {
-			vars[key] = value;
-		});
+		// Use URLSearchParams for query parsing
+		const params = new URLSearchParams(window.location.search);
+		const redirectFrom = params.get("redirectFrom");
 
-		if (vars.redirectFrom === "/resume") {
+		if (redirectFrom === "/resume") {
 			handleOpenArticle("resume");
 		}
 
-		if (vars.redirectFrom === "/strengths") {
+		if (redirectFrom === "/strengths") {
 			handleOpenArticle("strengths");
 		}
 
-		console.log(vars.redirectFrom === "portfolio");
-		if (vars.redirectFrom === "portfolio") {
+		if (redirectFrom === "portfolio") {
 			if (portfolioRef.current) {
 				setTimeout(() => {
 					portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+					// Remove 'redirectFrom=portfolio' from the URL after scrolling
+					const newParams = new URLSearchParams(window.location.search);
+					newParams.delete("redirectFrom");
+					const newUrl =
+						window.location.pathname +
+						(newParams.toString() ? `?${newParams.toString()}` : "");
+					window.history.replaceState({}, "", newUrl);
 				}, 500);
 			}
 		}
 
-		if (
-			vars.redirectFrom &&
-			vars.redirectFrom.toLowerCase() === "/getonlineworkshop"
-		) {
+		if (redirectFrom && redirectFrom.toLowerCase() === "/getonlineworkshop") {
 			handleOpenArticle("getOnlineWorkshop");
 		}
 
