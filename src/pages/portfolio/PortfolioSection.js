@@ -138,7 +138,9 @@ const PortfolioSection = ({ id = "portfolio-section" }) => {
 							<Link to="/portfolio/tuzag" className="company-card">
 								<div className="company-header">
 									<h3>tuzag</h3>
-									<span className="company-period">July 2015 - Present</span>
+									<span className="company-period">
+										July 2015 - October 2025
+									</span>
 								</div>
 								<div className="company-description">
 									<p>Conversational AI Startup</p>
