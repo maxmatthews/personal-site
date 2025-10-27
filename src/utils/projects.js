@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 export const projects = [
 	{
 		id: 1,
-		title: "tuzag Development Studio",
+		title: "Tailored Content Development Studio",
 		description:
 			"Agentic AI CMS (content management system) for building conversational relationships.",
 		image: (
@@ -48,8 +48,9 @@ export const projects = [
 	},
 	{
 		id: 2,
-		title: "tuzag Content API",
-		description: "RESTful API for generating content stored in headless CMS.",
+		title: "Content API",
+		description:
+			"RESTful API for generating tailored content on the fly stored in headless CMS or generated using Gen AI.",
 		image: (
 			<StaticImage
 				src={"../images/tuzag-content-api-diagram.svg"}

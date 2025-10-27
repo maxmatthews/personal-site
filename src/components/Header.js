@@ -26,26 +26,26 @@ const Header = (props) => {
 						Applied AI Full Stack Javascript Developer. Mentor, Hacker, &
 						Entrepreneur.
 					</p>
-					<p>
-						CTO @{" "}
-						<a
-							href={"https://wearetuzag.com"}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							tuzag
-						</a>
-						. Syracuse, NY.
-						{/*{" "}*/}
-						{/*<code>&&</code> Lead Instructor @{" "}*/}
-						{/*<a*/}
-						{/*	href={"https://careersincode.org"}*/}
-						{/*	target="_blank"*/}
-						{/*	rel="noopener noreferrer"*/}
-						{/*>*/}
-						{/*	Careers In Code*/}
-						{/*</a>*/}
-					</p>
+					{/*<p>*/}
+					{/*	CTO @{" "}*/}
+					{/*	<a*/}
+					{/*		href={"https://wearetuzag.com"}*/}
+					{/*		target="_blank"*/}
+					{/*		rel="noopener noreferrer"*/}
+					{/*	>*/}
+					{/*		tuzag*/}
+					{/*	</a>*/}
+					{/*	. Syracuse, NY.*/}
+					{/*	/!*{" "}*!/*/}
+					{/*	/!*<code>&&</code> Lead Instructor @{" "}*!/*/}
+					{/*	/!*<a*!/*/}
+					{/*	/!*	href={"https://careersincode.org"}*!/*/}
+					{/*	/!*	target="_blank"*!/*/}
+					{/*	/!*	rel="noopener noreferrer"*!/*/}
+					{/*	/!*>*!/*/}
+					{/*	/!*	Careers In Code*!/*/}
+					{/*	/!*</a>*!/*/}
+					{/*</p>*/}
 					<p>
 						Pursuing full-time, part-time, or 1099 contract roles. In person,
 						remote, or relocation.

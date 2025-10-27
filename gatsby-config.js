@@ -5,7 +5,7 @@ module.exports = {
 		title: "Max Matthews",
 		author: "Max Matthews",
 		description:
-			"Max Matthews is CTO @ tuzag. Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY.",
+			"Max Matthews: Full Stack Javascript Developer, Hacker, Mentor & Entrepreneur. Syracuse, NY, remote, & relocation..",
 	},
 	plugins: [
 		{
