@@ -60,8 +60,11 @@ const RecentPosts = () => {
 
 	return (
 		<>
-			<div id="wrapper" style={{ paddingTop: 0 }}>
-				<div className="portfolio-page loaded posts" style={{ paddingTop: 0 }}>
+			<div id="wrapper" style={{ paddingTop: 0, minHeight: "auto" }}>
+				<div
+					className="portfolio-page loaded posts"
+					style={{ paddingTop: 0, minHeight: "auto" }}
+				>
 					<div
 						className="projects-section animate-fade-in-up"
 						style={{ marginTop: 0 }}
