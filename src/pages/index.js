@@ -6,6 +6,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import { getBackgroundImage } from "../utils/background";
 import PortfolioSection from "../pages/portfolio/PortfolioSection";
+import RecentPosts from "../components/RecentPosts";
 
 const IndexPage = ({ location }) => {
 	const [isArticleVisible, setIsArticleVisible] = useState(false);
@@ -215,6 +216,7 @@ const IndexPage = ({ location }) => {
 				<div ref={portfolioRef}>
 					<PortfolioSection id="portfolio-section-home" />
 				</div>
+				<RecentPosts />
 				<div id="bg" />
 
 				{/* Calendly Modal */}

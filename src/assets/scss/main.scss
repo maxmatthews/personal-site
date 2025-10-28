@@ -1,9 +1,9 @@
 @use "sass:meta";
-@use 'libs/vars';
-@use 'libs/functions';
-@use 'libs/mixins';
-@use 'libs/skel';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
+@use "libs/vars";
+@use "libs/functions";
+@use "libs/mixins";
+@use "libs/skel";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
 /*
 	Dimension by HTML5 UP
@@ -13,45 +13,46 @@
 
 @include skel.skel-breakpoints(
 	(
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)',
+		xlarge: "(max-width: 1680px)",
+		large: "(max-width: 1280px)",
+		medium: "(max-width: 980px)",
+		small: "(max-width: 736px)",
+		xsmall: "(max-width: 480px)",
+		xxsmall: "(max-width: 360px)",
 	)
 );
 
 @include skel.skel-layout(
 	(
-		reset: 'full',
-		boxModel: 'border',
+		reset: "full",
+		boxModel: "border",
 	)
 );
 
 // Base.
 
-@include meta.load-css('base/page');
-@include meta.load-css('base/typography');
+@include meta.load-css("base/page");
+@include meta.load-css("base/typography");
 
 // Component.
 
-@include meta.load-css('components/form');
-@include meta.load-css('components/box');
-@include meta.load-css('components/icon');
-@include meta.load-css('components/image');
-@include meta.load-css('components/list');
-@include meta.load-css('components/table');
-@include meta.load-css('components/button');
-@include meta.load-css('components/portfolio');
+@include meta.load-css("components/form");
+@include meta.load-css("components/box");
+@include meta.load-css("components/icon");
+@include meta.load-css("components/image");
+@include meta.load-css("components/list");
+@include meta.load-css("components/table");
+@include meta.load-css("components/button");
+@include meta.load-css("components/portfolio");
+@include meta.load-css("components/recent-posts");
 
 // Layout.
 
-@include meta.load-css('layout/bg');
-@include meta.load-css('layout/wrapper');
-@include meta.load-css('layout/header');
-@include meta.load-css('layout/main');
-@include meta.load-css('layout/footer');
+@include meta.load-css("layout/bg");
+@include meta.load-css("layout/wrapper");
+@include meta.load-css("layout/header");
+@include meta.load-css("layout/main");
+@include meta.load-css("layout/footer");
 
 .rc-collapse,
 .rc-collapse-content {
