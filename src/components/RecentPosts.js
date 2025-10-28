@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 const RecentPosts = () => {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [visiblePosts, setVisiblePosts] = useState(2);
+
+	const handleLoadMore = () => {
+		setVisiblePosts((prev) => Math.min(prev + 2, posts.length));
+	};
 
 	useEffect(() => {
 		const fetchPosts = async () => {
@@ -21,7 +26,7 @@ const RecentPosts = () => {
 					const fallbackImage =
 						"https://cdn-icons-png.flaticon.com/512/5968/5968885.png"; // Example fallback image
 
-					const formattedPosts = data.items.slice(0, 3).map((post) => {
+					const formattedPosts = data.items.slice(0, 6).map((post) => {
 						let thumbnail = post.thumbnail;
 						if (!thumbnail) {
 							thumbnail =
@@ -71,7 +76,7 @@ const RecentPosts = () => {
 					>
 						<h2>Recent Blog Posts</h2>
 						<div className="portfolio-grid">
-							{posts.map((post, index) => (
+							{posts.slice(0, visiblePosts).map((post, index) => (
 								<a
 									key={post.guid}
 									href={post.link}
@@ -102,6 +107,17 @@ const RecentPosts = () => {
 								</a>
 							))}
 						</div>
+						{posts.length > visiblePosts && (
+							<div style={{ textAlign: "center", marginTop: "2rem" }}>
+								<button
+									onClick={handleLoadMore}
+									className="learn-more-button"
+									style={{ display: "inline-block" }}
+								>
+									Load More Posts
+								</button>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
