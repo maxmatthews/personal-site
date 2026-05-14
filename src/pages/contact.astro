@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Linkedin, Github, Rss, Contact } from "lucide-react";
+---
+
+<Layout
+	wrap={false}
+	title="Contact - Max Matthews"
+	description="Get in touch with Max Matthews."
+>
+	<div class="body is-article-visible">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex;">
+				<article id="contact" class="active">
+					<h2 class="major">Contact</h2>
+					<form
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						data-netlify-honeypot="bot-field"
+						action="/contact-success"
+					>
+						<input type="hidden" name="form-name" value="contact" />
+						<div style="display: none;">
+							<label for="bot-field">
+								Don't fill this out if you're human:{" "}
+							</label>
+							<input name="bot-field" id="bot-field" />
+						</div>
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="4"></textarea>
+						</div>
+						<ul class="actions">
+							<li>
+								<input type="submit" value="Send Message" class="special" />
+							</li>
+						</ul>
+					</form>
+					<ul class="icons">
+						<li>
+							<a
+								href="https://linkedin.com/in/maxzmatthews"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="icon2"
+							>
+								<Linkedin size={20} aria-hidden="true" />
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://medium.com/mzm"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="icon2"
+							>
+								<Rss size={20} aria-hidden="true" />
+								<span class="label">Blog</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/maxmatthews/personal-site"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="icon2"
+							>
+								<Github size={20} aria-hidden="true" />
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a
+								href="/MatthewsMaxCard.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="icon2"
+							>
+								<Contact size={20} aria-hidden="true" />
+								<span class="label">Business Card</span>
+							</a>
+						</li>
+					</ul>
+					<button class="close" type="button" onclick="history.back()" aria-label="Close"></button>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>

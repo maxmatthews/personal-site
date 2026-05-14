@@ -1,0 +1,58 @@
+---
+import "../assets/scss/main.scss";
+import { APPLY_BG_INLINE_SCRIPT } from "../utils/background";
+
+interface Props {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+	keywords?: string;
+	bodyClass?: string;
+	wrap?: boolean;
+}
+
+const {
+	title = "Max Matthews",
+	description = "Max Matthews: Applied AI Full Stack Javascript Developer. Mentor, Hacker, & Entrepreneur. Pursuing full-time, part-time, or 1099 contract roles. In person, remote, or relocation.",
+	ogImage = "https://maxmatthe.ws/og_image.png",
+	keywords = "max matthews, full stack developer, applied ai, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto",
+	bodyClass = "",
+	wrap = true,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<link rel="canonical" href={canonicalURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="3600" />
+		<meta property="og:image:height" content="1890" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<title>{title}</title>
+		<link rel="icon" type="image/png" href="/images/headshot.png" />
+	</head>
+	<body class={bodyClass}>
+		<script is:inline set:html={APPLY_BG_INLINE_SCRIPT} />
+		{
+			wrap ? (
+				<div id="wrapper" class="page">
+					<slot />
+				</div>
+			) : (
+				<slot />
+			)
+		}
+		<div id="bg"></div>
+	</body>
+</html>

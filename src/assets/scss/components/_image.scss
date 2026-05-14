@@ -17,7 +17,7 @@
 
 		&:before {
 			@include skel.vendor('pointer-events', 'none');
-			background-image: url('../../images/overlay.png');
+			background-image: url('/images/overlay.png');
 			background-color: functions.palette(bg-overlay);
 			border-radius: functions.size(border-radius);
 			content: '';
