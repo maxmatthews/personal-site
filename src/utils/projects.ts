@@ -15,7 +15,7 @@ export const projects: Project[] = [
 		title: "Tailored Content Development Studio",
 		description:
 			"Agentic AI CMS (content management system) for building conversational relationships.",
-		image: "/images/tcs-screenshot.png",
+		image: "/images/tcs-screenshot.webp",
 		imageAlt: "tuzag Development Studio screenshot",
 		technologies: [
 			"React",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
 		title: "Ask Jaime (RAG)",
 		description:
 			"AI-powered digital concierge demonstrating advanced RAG implementation and conversational storytelling",
-		image: "/images/jaime-screenshot.png",
+		image: "/images/jaime-screenshot.webp",
 		imageAlt: "Ask Jaime website screenshot",
 		technologies: [
 			"RAG (Retrieval-Augmented Generation)",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
 		title: "Careers In Code Bootcamp",
 		description:
 			"6-month full-stack JavaScript bootcamp with modernized curriculum incorporating AI tools and APIs.",
-		image: "/images/careers-in-code.jpg",
+		image: "/images/careers-in-code.webp",
 		imageAlt: "Careers In Code logo",
 		technologies: ["JavaScript", "React", "Node.js", "AI Tools", "LMS"],
 		slug: "careers-in-code",
