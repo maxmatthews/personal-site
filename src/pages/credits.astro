@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Credits - Max Matthews" description="Credits for the Max Matthews personal site theme and assets.">
+	<div class="body">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex;">
+				<article id="credits" class="active">
+					<h2 class="major">Credits</h2>
+					<p>
+						Theme by{" "}
+						<a
+							href="https://github.com/codebushi/gatsby-starter-dimension"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Codebushi
+						</a>
+					</p>
+					<p>
+						Backgrounds by{" "}
+						<a
+							href="https://www.oxygenna.com/freebies/50-material-design-backgrounds"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Oxygenna
+						</a>
+					</p>
+					<button class="close" type="button" onclick="history.back()" aria-label="Close"></button>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>

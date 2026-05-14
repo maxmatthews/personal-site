@@ -1,19 +1,22 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+export interface Project {
+	id: number;
+	title: string;
+	description: string;
+	image: string;
+	imageAlt: string;
+	technologies: string[];
+	slug: string;
+	company: string;
+}
 
-export const projects = [
+export const projects: Project[] = [
 	{
 		id: 1,
 		title: "Tailored Content Development Studio",
 		description:
 			"Agentic AI CMS (content management system) for building conversational relationships.",
-		image: (
-			<StaticImage
-				src={"../images/tcs-screenshot.png"}
-				alt={`tuzag Development Studio screenshot`}
-				className="project-screenshot"
-			/>
-		),
+		image: "/images/tcs-screenshot.png",
+		imageAlt: "tuzag Development Studio screenshot",
 		technologies: [
 			"React",
 			"Node.js",
@@ -29,6 +32,8 @@ export const projects = [
 		title: "Ask Jaime (RAG)",
 		description:
 			"AI-powered digital concierge demonstrating advanced RAG implementation and conversational storytelling",
+		image: "/images/jaime-screenshot.png",
+		imageAlt: "Ask Jaime website screenshot",
 		technologies: [
 			"RAG (Retrieval-Augmented Generation)",
 			"Conversational AI",
@@ -37,13 +42,6 @@ export const projects = [
 			"Express Sockets",
 		],
 		slug: "tuzag-ask-jaime",
-		image: (
-			<StaticImage
-				src={"../images/jaime-screenshot.png"}
-				alt={`Ask Jaime website screenshot`}
-				className="project-screenshot"
-			/>
-		),
 		company: "tuzag",
 	},
 	{
@@ -51,13 +49,8 @@ export const projects = [
 		title: "Content API",
 		description:
 			"RESTful API for generating tailored content on the fly stored in headless CMS or generated using Gen AI.",
-		image: (
-			<StaticImage
-				src={"../images/tuzag-content-api-diagram.svg"}
-				alt={`tuzag Content API screenshot`}
-				className="project-screenshot"
-			/>
-		),
+		image: "/images/tuzag-content-api-diagram.svg",
+		imageAlt: "tuzag Content API screenshot",
 		technologies: [
 			"Node.js",
 			"Express",
@@ -74,16 +67,10 @@ export const projects = [
 		title: "Careers In Code Bootcamp",
 		description:
 			"6-month full-stack JavaScript bootcamp with modernized curriculum incorporating AI tools and APIs.",
-		image: (
-			<StaticImage
-				src={"../images/careers-in-code.jpg"}
-				alt={`Careers In Code logo`}
-				className="project-screenshot"
-			/>
-		),
+		image: "/images/careers-in-code.jpg",
+		imageAlt: "Careers In Code logo",
 		technologies: ["JavaScript", "React", "Node.js", "AI Tools", "LMS"],
 		slug: "careers-in-code",
 		company: "hack-upstate",
 	},
-	// Add more projects as needed, with the correct company key
 ];

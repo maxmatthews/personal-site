@@ -1,0 +1,218 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const project = {
+	id: 1,
+	title: "tuzag Development Studio",
+	description:
+		"Agentic AI platform for building conversational relationships",
+	technologies: [
+		"React",
+		"Node.js",
+		"Meteor",
+		"Mongo",
+		"Conversational AI Integrations",
+	],
+	slug: "tuzag-platform",
+};
+---
+
+<Layout
+	title="tuzag Development Studio - Max Matthews"
+	description="Agentic AI platform for building conversational relationships - Project details for Max Matthews portfolio"
+	wrap={false}
+>
+	<div class="body">
+		<div id="wrapper">
+			<button
+				class="back-button-fixed"
+				type="button"
+				onclick="history.back()"
+				aria-label="Go back"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M19 12H5M12 19L5 12L12 5"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<div class="project-details-page loaded">
+				<div class="project-header animate-fade-in-up">
+					<h1>{project.title}</h1>
+					<p class="project-subtitle">{project.description}</p>
+				</div>
+
+				<div class="project-content-grid">
+					<div class="project-hero-section animate-fade-in-up">
+						<div class="project-image-large">
+							<img
+								src="/images/tcs-screenshot.png"
+								alt="tuzag Development Studio Screenshot"
+								class="project-screenshot"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+					</div>
+
+					<div class="project-main-content">
+						<div class="project-about-section animate-fade-in-up">
+							<h3>About This Project</h3>
+							<div class="project-description">
+								<p>
+									The tuzag Development Studio is a comprehensive platform
+									for building and deploying Agentic AI solutions that go
+									beyond simple transactions to create lasting customer
+									relationships. As CTO, I led the technical architecture
+									and development of this groundbreaking Relationship AI
+									platform.
+								</p>
+								<p>
+									The platform combines Conversational AI, Generative AI,
+									and behavioral science to create digital concierges that
+									understand context, guide behavior change, and accelerate
+									outcomes. Our proprietary Relationship AI transforms
+									everyday interactions into meaningful engagement that
+									drives real business results.
+								</p>
+								<p>
+									This project showcases my expertise in AI integration,
+									conversational interfaces, and building scalable platforms
+									that bridge the gap between technology and human behavior.
+									The platform serves clients ranging in size across
+									healthcare and B2B/B2C marketing sectors.
+								</p>
+							</div>
+						</div>
+
+						<div class="project-details-grid">
+							<div class="project-section animate-fade-in-left">
+								<h3>Technologies Used</h3>
+								<div class="technologies-list">
+									{project.technologies.map((tech) => (
+										<span class="tech-tag-large">{tech}</span>
+									))}
+								</div>
+							</div>
+
+							<div class="project-section animate-fade-in-right">
+								<h3>Key Features</h3>
+								<ul class="features-list">
+									<li>Relationship AI-powered digital concierges</li>
+									<li>
+										Behavioral science integration for behavior change
+										acceleration
+									</li>
+									<li>
+										Multi-channel deployment (web, mobile, SMS, email)
+									</li>
+									<li>
+										Real-time conversation tailoring and personalization
+									</li>
+									<li>
+										Generative AI with controlled narrative management
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="project-links-section animate-fade-in-up">
+							<div class="project-links">
+								<button
+									class="project-link primary"
+									type="button"
+									data-open-modal
+								>
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"></path>
+									</svg>
+									Book a Demo
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-overlay" data-modal hidden>
+		<div class="modal-content" data-modal-content>
+			<button
+				class="modal-close"
+				type="button"
+				data-close-modal
+				aria-label="Close modal"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M18 6L6 18M6 6l12 12"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<iframe
+				src="https://calendly.com/maxmatthews/portfolio-demo"
+				width="100%"
+				height="600"
+				frameborder="0"
+				title="Book a Demo"></iframe>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	const overlay = document.querySelector<HTMLElement>("[data-modal]");
+	const content = document.querySelector<HTMLElement>("[data-modal-content]");
+	const openBtns = document.querySelectorAll<HTMLButtonElement>(
+		"[data-open-modal]",
+	);
+	const closeBtns = document.querySelectorAll<HTMLButtonElement>(
+		"[data-close-modal]",
+	);
+
+	openBtns.forEach((b) =>
+		b.addEventListener("click", () => {
+			if (overlay) overlay.hidden = false;
+		}),
+	);
+	closeBtns.forEach((b) =>
+		b.addEventListener("click", () => {
+			if (overlay) overlay.hidden = true;
+		}),
+	);
+	overlay?.addEventListener("click", () => {
+		overlay.hidden = true;
+	});
+	content?.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+</script>

@@ -1,0 +1,251 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects } from "../../utils/projects";
+
+const project = projects.find((p) => p.slug === "tuzag-ask-jaime")!;
+---
+
+<Layout
+	title="Jaime RAG Concierge - Max Matthews"
+	description="AI-powered digital concierge demonstrating advanced RAG implementation and conversational storytelling - Project details for Max Matthews portfolio"
+	wrap={false}
+>
+	<div class="body">
+		<div id="wrapper">
+			<button
+				class="back-button-fixed"
+				type="button"
+				onclick="history.back()"
+				aria-label="Go back"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M19 12H5M12 19L5 12L12 5"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<div class="project-details-page loaded">
+				<div class="project-header animate-fade-in-up">
+					<h1>{project.title}</h1>
+					<p class="project-subtitle">{project.description}</p>
+				</div>
+
+				<div class="project-content-grid">
+					<div class="project-hero-section animate-fade-in-up">
+						<div class="project-image-large">
+							<img
+								src="/images/jaime-screenshot.png"
+								alt="Jaime RAG Concierge Screenshot"
+								class="project-screenshot"
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+					</div>
+
+					<div class="project-main-content">
+						<div class="project-about-section animate-fade-in-up">
+							<h3>About This Project</h3>
+							<div class="project-description">
+								<p>
+									Jaime represents a sophisticated implementation of RAG
+									(Retrieval-Augmented Generation) technology, serving as
+									tuzag's digital concierge and demonstrating how AI can
+									transform from simple question-answering to building
+									lasting relationships. This project showcases my technical
+									leadership in creating conversational AI that goes beyond
+									transactions to deliver personalized, contextually-aware
+									experiences.
+								</p>
+								<p>
+									As CTO, I architected Jaime to demonstrate tuzag's unique
+									"Relationship AI" approach—combining traditional RAG
+									principles with behavioral science and multidimensional
+									conversational storytelling. Rather than just retrieving
+									facts, Jaime retrieves behavioral and contextual
+									relevance, adapting conversations in real-time based on
+									user attributes, interaction history, and business
+									objectives.
+								</p>
+								<p>
+									This project exemplifies my expertise in AI integration,
+									prompt engineering, and building scalable systems that
+									bridge cutting-edge AI capabilities with real-world
+									business needs. Jaime serves as both a working product and
+									a proof-of-concept for how RAG systems can evolve from
+									audit systems for facts into engagement systems for
+									behavior change.
+								</p>
+							</div>
+						</div>
+
+						<div class="project-details-grid">
+							<div class="project-section animate-fade-in-left">
+								<h3>Technologies Used</h3>
+								<div class="technologies-list">
+									{project.technologies.map((tech) => (
+										<span class="tech-tag-large">{tech}</span>
+									))}
+								</div>
+							</div>
+
+							<div class="project-section animate-fade-in-right">
+								<h3>Key Features</h3>
+								<ul class="features-list">
+									<li>
+										Advanced RAG implementation for contextual knowledge
+										retrieval
+									</li>
+									<li>Multi-mode interactions (chat, Q&A, voice-ready)</li>
+									<li>
+										Dynamic content tailoring based on user attributes
+									</li>
+									<li>Behavioral science-informed conversation flows</li>
+									<li>Real-time Generative AI prompt engineering</li>
+									<li>
+										Relationship-building over transactional responses
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="project-about-section animate-fade-in-up">
+							<h3>Technical Details</h3>
+							<div class="project-description">
+								<p>
+									<strong>Strategic RAG Architecture:</strong> Unlike
+									traditional RAG systems that simply retrieve documents,
+									Jaime implements a sophisticated knowledge base that
+									retrieves content tailored to both the query and the
+									individual user's cognitive-behavioral profile. This "3-D
+									Storytelling" approach creates millions of potential
+									message combinations while maintaining narrative
+									coherence.
+								</p>
+								<p>
+									<strong>Omni-channel Ready:</strong> The underlying
+									architecture supports deployment across web, mobile, SMS,
+									email, IVR, and voice assistants—demonstrating my
+									expertise in building truly platform-agnostic AI systems.
+								</p>
+							</div>
+						</div>
+
+						<div class="project-links-section animate-fade-in-up">
+							<div class="project-links">
+								<a
+									href="https://askjaime.wearetuzag.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="project-link primary"
+								>
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"></path>
+									</svg>
+									Experience Jaime Live
+								</a>
+								<button class="project-link" type="button" data-open-modal>
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"></path>
+									</svg>
+									Schedule a Demo
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-overlay" data-modal hidden>
+		<div class="modal-content" data-modal-content>
+			<button
+				class="modal-close"
+				type="button"
+				data-close-modal
+				aria-label="Close modal"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M18 6L6 18M6 6l12 12"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<iframe
+				src="https://calendly.com/maxmatthews/portfolio-demo"
+				width="100%"
+				height="600"
+				frameborder="0"
+				title="Schedule a Demo"></iframe>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	const overlay = document.querySelector<HTMLElement>("[data-modal]");
+	const content = document.querySelector<HTMLElement>("[data-modal-content]");
+	const openBtns = document.querySelectorAll<HTMLButtonElement>(
+		"[data-open-modal]",
+	);
+	const closeBtns = document.querySelectorAll<HTMLButtonElement>(
+		"[data-close-modal]",
+	);
+
+	openBtns.forEach((b) =>
+		b.addEventListener("click", () => {
+			if (overlay) overlay.hidden = false;
+		}),
+	);
+	closeBtns.forEach((b) =>
+		b.addEventListener("click", () => {
+			if (overlay) overlay.hidden = true;
+		}),
+	);
+	overlay?.addEventListener("click", () => {
+		overlay.hidden = true;
+	});
+	content?.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+</script>
