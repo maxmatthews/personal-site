@@ -1,7 +1,6 @@
 ---
 import "../assets/scss/main.scss";
 import { APPLY_BG_INLINE_SCRIPT } from "../utils/background";
-import { X } from "lucide-react";
 
 interface Props {
 	title?: string;
@@ -55,67 +54,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 			)
 		}
 		<div id="bg"></div>
-
-		<div
-			id="calendly-modal"
-			class="modal-overlay"
-			role="dialog"
-			aria-modal="true"
-			aria-labelledby="calendly-modal-title"
-			hidden
-		>
-			<div class="modal-content">
-				<h2 id="calendly-modal-title" class="visually-hidden">
-					Book a meeting with Max
-				</h2>
-				<button
-					class="modal-close"
-					type="button"
-					aria-label="Close calendar modal"
-					data-close-calendar
-				>
-					<X size={24} aria-hidden="true" />
-				</button>
-				<iframe
-					src="about:blank"
-					data-calendly-src="https://calendly.com/maxmatthews"
-					width="100%"
-					height="600"
-					frameborder="0"
-					title="Book a Meeting"
-				></iframe>
-			</div>
-		</div>
-
-		<script>
-			const modal = document.getElementById("calendly-modal");
-			if (modal) {
-				const iframe = modal.querySelector("iframe");
-				const calendlySrc = iframe?.getAttribute("data-calendly-src");
-				const open = () => {
-					if (iframe && calendlySrc && iframe.src !== calendlySrc) {
-						iframe.src = calendlySrc;
-					}
-					modal.hidden = false;
-					document.body.style.overflow = "hidden";
-				};
-				const close = () => {
-					modal.hidden = true;
-					document.body.style.overflow = "";
-				};
-				document.querySelectorAll("[data-open-calendar]").forEach((btn) => {
-					btn.addEventListener("click", open);
-				});
-				document.querySelectorAll("[data-close-calendar]").forEach((btn) => {
-					btn.addEventListener("click", close);
-				});
-				modal.addEventListener("click", (e) => {
-					if (e.target === modal) close();
-				});
-				document.addEventListener("keydown", (e) => {
-					if (e.key === "Escape" && !modal.hidden) close();
-				});
-			}
-		</script>
 	</body>
 </html>

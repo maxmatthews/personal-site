@@ -5,17 +5,47 @@ import Footer from "../components/Footer.astro";
 import { Target, FileBadge, Terminal, ShieldCheck, Trophy } from "lucide-react";
 
 const strengths = [
-	{ Icon: Target, name: "Focus", iconSize: 14 },
-	{ Icon: FileBadge, name: "Significance", iconSize: 14 },
-	{ Icon: Terminal, name: "Command", iconSize: 12 },
-	{ Icon: ShieldCheck, name: "Achiever", iconSize: 14 },
-	{ Icon: Trophy, name: "Competition", iconSize: 13 },
+	{
+		Icon: Target,
+		iconSize: 14,
+		name: "Focus",
+		summary:
+			"I work best with a clear destination. Goals act as a filter — I instinctively evaluate whether something is moving me toward what matters and shed everything else. That makes me efficient, and it makes me the person on a team who pulls everyone back to the main road when discussions wander.",
+	},
+	{
+		Icon: FileBadge,
+		iconSize: 14,
+		name: "Significance",
+		summary:
+			"I want my work to matter and to be recognized for the specific strengths I bring. That pulls me toward credible, ambitious people and projects, and it keeps me reaching for work that feels like a calling rather than a job.",
+	},
+	{
+		Icon: Terminal,
+		iconSize: 12,
+		name: "Command",
+		summary:
+			"I'm comfortable taking a position and sharing it. I'd rather have an uncomfortable, honest conversation now than let ambiguity drag on — confrontation, to me, is just the first step toward resolution.",
+	},
+	{
+		Icon: ShieldCheck,
+		iconSize: 14,
+		name: "Achiever",
+		summary:
+			"Every day starts at zero. I need to produce something tangible by the end of it to feel good about the day, and that drive runs through weekends and vacations too. It's the energy source that lets me set the pace on a team without burning out.",
+	},
+	{
+		Icon: Trophy,
+		iconSize: 13,
+		name: "Competition",
+		summary:
+			"I measure my work against other people's, not just against my own goals. Comparisons sharpen me — I like contests, I like measurement, and I compete to win, not just to participate.",
+	},
 ];
 ---
 
 <Layout
 	title="Strengths - Max Matthews"
-	description="Max Matthews' top 5 Clifton StrengthsFinder results."
+	description="Max Matthews' top 5 Clifton StrengthsFinder themes, in my own words."
 >
 	<div class="body">
 		<div id="wrapper">
@@ -29,32 +59,24 @@ const strengths = [
 							href="https://www.gallupstrengthscenter.com/"
 							target="_blank"
 							rel="noopener noreferrer">StrengthsFinder</a
-						> is an assessment tool used to maximize both team and personal productivity.
-						Below are my top 5 themes.
+						> is an assessment tool used to maximize team and personal productivity.
+						My top 5 themes — described below in my own words to give you a feel
+						for how I work.
 					</p>
 					{
-						strengths.map(({ Icon, name, iconSize }) => (
+						strengths.map(({ Icon, name, iconSize, summary }) => (
 							<details>
 								<summary>
 									<Icon size={iconSize} aria-hidden="true" />
 									{" "}{name}
 								</summary>
-								<p>
-									See the official Gallup description at the{" "}
-									<a
-										href={`https://www.gallup.com/cliftonstrengths/en/252259/${name.toLowerCase()}-theme.aspx`}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										CliftonStrengths {name} page
-									</a>
-									.
-								</p>
+								<p>{summary}</p>
 							</details>
 						))
 					}
 					<p style="margin-top: 20px; margin-bottom: 20px; font-size: 10px;">
-						Strength names are &copy; Gallup. See linked pages for full descriptions.
+						Theme names are &copy; Gallup. Summaries above are my own description
+						of how each theme shows up for me.
 					</p>
 					<button
 						class="close"
