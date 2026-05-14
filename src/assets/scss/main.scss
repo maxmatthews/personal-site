@@ -3,7 +3,8 @@
 @use "libs/functions";
 @use "libs/mixins";
 @use "libs/skel";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+// Source Sans Pro is loaded via <link> in Layout.astro (the previous @import
+// here was render-blocking on first paint).
 
 /*
 	Dimension by HTML5 UP

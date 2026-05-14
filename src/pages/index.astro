@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 ---
 
 <Layout wrap={false}>
-	<div class="body is-loading">
+	<div class="body">
 		<div id="wrapper">
 			<Header showPortfolioScroll={true} />
 			<Footer />
@@ -39,11 +39,6 @@ import { ChevronDown } from "lucide-react";
 </Layout>
 
 <script>
-	// Remove is-loading after mount
-	requestAnimationFrame(() => {
-		document.querySelector(".body")?.classList.remove("is-loading");
-	});
-
 	// Scroll-down arrow: visible only at top of page on larger screens
 	const arrowContainer = document.querySelector<HTMLElement>(
 		"[data-arrow-container]",
