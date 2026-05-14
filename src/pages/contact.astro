@@ -5,8 +5,12 @@ import Footer from "../components/Footer.astro";
 import { Linkedin, Github, Rss, Contact } from "lucide-react";
 ---
 
-<Layout title="Contact - Max Matthews" description="Get in touch with Max Matthews.">
-	<div class="body">
+<Layout
+	wrap={false}
+	title="Contact - Max Matthews"
+	description="Get in touch with Max Matthews."
+>
+	<div class="body is-article-visible">
 		<div id="wrapper">
 			<Header />
 			<div id="main" style="display: flex;">

@@ -37,17 +37,10 @@
 			border-radius: functions.size(border-radius);
 			opacity: 0;
 
-			&.timeout {
-				display: none;
-			}
-
-			&.active.timeout {
-				@include skel.vendor('transform', 'translateY(0)');
-				opacity: 1;
-			}
-
 			&.active {
+				@include skel.vendor('transform', 'translateY(0)');
 				display: block !important;
+				opacity: 1;
 			}
 
 			.close {
