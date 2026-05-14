@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Target, FileBadge, Terminal, ShieldCheck, Trophy } from "lucide-react";
+
+const strengths = [
+	{
+		Icon: Target,
+		iconSize: 14,
+		name: "Focus",
+		summary:
+			"I work best with a clear destination. Goals act as a filter — I instinctively evaluate whether something is moving me toward what matters and shed everything else. That makes me efficient, and it makes me the person on a team who pulls everyone back to the main road when discussions wander.",
+	},
+	{
+		Icon: FileBadge,
+		iconSize: 14,
+		name: "Significance",
+		summary:
+			"I want my work to matter and to be recognized for the specific strengths I bring. That pulls me toward credible, ambitious people and projects, and it keeps me reaching for work that feels like a calling rather than a job.",
+	},
+	{
+		Icon: Terminal,
+		iconSize: 12,
+		name: "Command",
+		summary:
+			"I'm comfortable taking a position and sharing it. I'd rather have an uncomfortable, honest conversation now than let ambiguity drag on — confrontation, to me, is just the first step toward resolution.",
+	},
+	{
+		Icon: ShieldCheck,
+		iconSize: 14,
+		name: "Achiever",
+		summary:
+			"Every day starts at zero. I need to produce something tangible by the end of it to feel good about the day, and that drive runs through weekends and vacations too. It's the energy source that lets me set the pace on a team without burning out.",
+	},
+	{
+		Icon: Trophy,
+		iconSize: 13,
+		name: "Competition",
+		summary:
+			"I measure my work against other people's, not just against my own goals. Comparisons sharpen me — I like contests, I like measurement, and I compete to win, not just to participate.",
+	},
+];
+---
+
+<Layout
+	wrap={false}
+	title="Strengths - Max Matthews"
+	description="Max Matthews' top 5 Clifton StrengthsFinder themes, in my own words."
+>
+	<div class="body is-article-visible">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex;">
+				<article id="strengths" class="active">
+					<h2 class="major">StrengthsFinder</h2>
+					<p>
+						Clifton
+						<a
+							href="https://www.gallupstrengthscenter.com/"
+							target="_blank"
+							rel="noopener noreferrer">StrengthsFinder</a
+						> is an assessment tool used to maximize team and personal productivity.
+						My top 5 themes — described below in my own words to give you a feel
+						for how I work.
+					</p>
+					{
+						strengths.map(({ Icon, name, iconSize, summary }) => (
+							<details>
+								<summary>
+									<Icon size={iconSize} aria-hidden="true" />
+									{" "}{name}
+								</summary>
+								<p>{summary}</p>
+							</details>
+						))
+					}
+					<p style="margin-top: 20px; margin-bottom: 20px; font-size: 10px;">
+						Theme names are &copy; Gallup. Summaries above are my own description
+						of how each theme shows up for me.
+					</p>
+					<button
+						class="close"
+						type="button"
+						onclick="history.back()"
+						aria-label="Close"></button>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>

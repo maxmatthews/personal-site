@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Thanks - Max Matthews" description="Thanks for getting in touch.">
+	<div class="body">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex;">
+				<article id="contact" class="active">
+					<h2 class="major">Thanks!</h2>
+					<p>Thanks, I'll be in touch soon!</p>
+					<p><a href="/">Back to home</a></p>
+					<button class="close" type="button" onclick="history.back()" aria-label="Close"></button>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>

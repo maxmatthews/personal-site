@@ -29,9 +29,7 @@
 		}
 
 		.body.is-article-visible & {
-			@include skel.vendor('transform', 'scale(0.95)');
-			@include skel.vendor('filter', 'blur(0.1rem)');
-			opacity: 0;
+			display: none;
 		}
 
 		.body.is-loading & {
