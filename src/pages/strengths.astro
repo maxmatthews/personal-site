@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Target, FileBadge, Terminal, ShieldCheck, Trophy } from "lucide-react";
+
+const strengths = [
+	{ Icon: Target, name: "Focus", iconSize: 14 },
+	{ Icon: FileBadge, name: "Significance", iconSize: 14 },
+	{ Icon: Terminal, name: "Command", iconSize: 12 },
+	{ Icon: ShieldCheck, name: "Achiever", iconSize: 14 },
+	{ Icon: Trophy, name: "Competition", iconSize: 13 },
+];
+---
+
+<Layout
+	title="Strengths - Max Matthews"
+	description="Max Matthews' top 5 Clifton StrengthsFinder results."
+>
+	<div class="body">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex;">
+				<article id="strengths" class="active">
+					<h2 class="major">StrengthsFinder</h2>
+					<p>
+						Clifton
+						<a
+							href="https://www.gallupstrengthscenter.com/"
+							target="_blank"
+							rel="noopener noreferrer">StrengthsFinder</a
+						> is an assessment tool used to maximize both team and personal productivity.
+						Below are my top 5 themes.
+					</p>
+					{
+						strengths.map(({ Icon, name, iconSize }) => (
+							<details>
+								<summary>
+									<Icon size={iconSize} aria-hidden="true" />
+									{" "}{name}
+								</summary>
+								<p>
+									See the official Gallup description at the{" "}
+									<a
+										href={`https://www.gallup.com/cliftonstrengths/en/252259/${name.toLowerCase()}-theme.aspx`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										CliftonStrengths {name} page
+									</a>
+									.
+								</p>
+							</details>
+						))
+					}
+					<p style="margin-top: 20px; margin-bottom: 20px; font-size: 10px;">
+						Strength names are &copy; Gallup. See linked pages for full descriptions.
+					</p>
+					<button
+						class="close"
+						type="button"
+						onclick="history.back()"
+						aria-label="Close"></button>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>

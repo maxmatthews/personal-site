@@ -1,0 +1,142 @@
+---
+import { Linkedin, Github, Contact, Dumbbell } from "lucide-react";
+
+interface Props {
+	showPortfolioScroll?: boolean;
+}
+
+const { showPortfolioScroll = false } = Astro.props;
+---
+
+<header id="header">
+	<div class="logo">
+		<span>
+			<img
+				src="/images/headshot.png"
+				alt="portrait of max matthews"
+				width="120"
+				height="115"
+				style="margin-top: 5px; margin-left: -5px;"
+				loading="eager"
+				decoding="async"
+			/>
+		</span>
+	</div>
+	<div class="content">
+		<div class="inner">
+			<h1>Max Matthews</h1>
+			<p>
+				Applied AI Full Stack Javascript Developer. Mentor, Hacker, &amp; Entrepreneur.
+			</p>
+			<p>
+				Pursuing full-time, part-time, or 1099 contract roles. In person, remote,
+				or relocation.
+			</p>
+		</div>
+	</div>
+	<nav>
+		<ul>
+			<li>
+				<a
+					class="headerLink"
+					href="/MatthewsMaxResume.pdf"
+					target="_blank"
+					rel="noopener noreferrer">Resume</a
+				>
+			</li>
+			<li>
+				{
+					showPortfolioScroll ? (
+						<button class="headerLink" data-scroll-to="portfolio-section-home">
+							Portfolio
+						</button>
+					) : (
+						<a class="headerLink" href="/#portfolio-section-home">
+							Portfolio
+						</a>
+					)
+				}
+			</li>
+			<li>
+				<a
+					class="headerLink"
+					href="https://medium.com/mzm"
+					target="_blank"
+					rel="noopener noreferrer">Blog</a
+				>
+			</li>
+			<li>
+				<button
+					class="headerLink"
+					data-open-calendar
+					style="padding-left: 19px; padding-right: 19px;">Calendar</button
+				>
+			</li>
+			<li>
+				<a class="headerLink" href="/contact">Contact</a>
+			</li>
+		</ul>
+	</nav>
+	<div id="headerSocialIcons">
+		<ul class="icons">
+			<li>
+				<a
+					href="https://linkedin.com/in/maxzmatthews"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon2"
+					aria-label="Max's Linked In Profile"
+				>
+					<Linkedin size={20} aria-hidden="true" />
+					<span class="label">LinkedIn</span>
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://github.com/maxmatthews/personal-site"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon2"
+					aria-label="Max's GitHub Profile"
+				>
+					<Github size={20} aria-hidden="true" />
+					<span class="label">GitHub</span>
+				</a>
+			</li>
+			<li>
+				<a
+					href="/MatthewsMaxCard.pdf"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon2"
+					aria-label="Max's Business Card"
+				>
+					<Contact size={20} aria-hidden="true" />
+					<span class="label">Business Card</span>
+				</a>
+			</li>
+			<li>
+				<a
+					href="/strengths"
+					class="icon2"
+					aria-label="Max's Strength Quest Results"
+				>
+					<Dumbbell size={20} aria-hidden="true" />
+					<span class="label">Strengths</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<script>
+	// Smooth-scroll within page for buttons with data-scroll-to
+	document.querySelectorAll("[data-scroll-to]").forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const id = btn.getAttribute("data-scroll-to");
+			if (!id) return;
+			const target = document.getElementById(id);
+			target?.scrollIntoView({ behavior: "smooth" });
+		});
+	});
+</script>
