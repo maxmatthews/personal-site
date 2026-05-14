@@ -14,7 +14,7 @@ interface Props {
 const {
 	title = "Max Matthews",
 	description = "Max Matthews: Applied AI Full Stack Javascript Developer. Mentor, Hacker, & Entrepreneur. Pursuing full-time, part-time, or 1099 contract roles. In person, remote, or relocation.",
-	ogImage = "https://maxmatthe.ws/og_image.png",
+	ogImage = "https://maxmatthe.ws/og_image.webp",
 	keywords = "max matthews, full stack developer, applied ai, javascript, mentor, hacker, entrepreneur, careers in code, syracuse, ny, tuzag, cto",
 	bodyClass = "",
 	wrap = true,
@@ -40,7 +40,26 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 		<meta property="og:url" content={canonicalURL} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<title>{title}</title>
-		<link rel="icon" type="image/png" href="/images/headshot.png" />
+		<link rel="icon" type="image/webp" href="/images/headshot.webp" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap"
+			/>
+		</noscript>
 	</head>
 	<body class={bodyClass}>
 		<script is:inline set:html={APPLY_BG_INLINE_SCRIPT} />
