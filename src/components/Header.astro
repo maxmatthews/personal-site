@@ -135,14 +135,15 @@ const { showPortfolioScroll = false } = Astro.props;
 		display: block;
 	}
 
-	/* Center Lucide SVGs inside circular .icon2 anchors */
-	#headerSocialIcons .icons li a {
+	/* Center Lucide SVGs inside circular icon anchors (used in header and
+	   contact-form social row). */
+	ul.icons li a {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		line-height: 1;
 	}
-	#headerSocialIcons .icons li a svg {
+	ul.icons li a svg {
 		display: block;
 	}
 </style>
