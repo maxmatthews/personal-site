@@ -21,16 +21,15 @@ export default defineConfig({
 				start_url: "/",
 				icons: [
 					{
-						src: "/images/headshot.png",
-						sizes: "512x512",
-						type: "image/png",
+						src: "/images/headshot.webp",
+						sizes: "320x320",
+						type: "image/webp",
 						purpose: "any maskable",
 					},
 				],
 			},
 			workbox: {
 				globPatterns: ["**/*.{js,css,html,svg,jpg,jpeg,webp,woff,woff2}"],
-				globIgnores: ["**/og_image.png", "**/headshot.png"],
 				navigateFallback: null,
 				maximumFileSizeToCacheInBytes: 5_000_000,
 			},
