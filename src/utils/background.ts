@@ -1,7 +1,8 @@
 // Background utility — maintains a consistent background image across pages
-// using localStorage with a 1-hour TTL.
-const BACKGROUND_STORAGE_KEY = "selectedBackgroundImage";
-const BACKGROUND_TIMESTAMP_KEY = "selectedBackgroundImageTimestamp";
+// using localStorage with a 1-hour TTL. Keys are versioned so a bad cached
+// URL from a prior bug won't keep loading 404s after a fix.
+const BACKGROUND_STORAGE_KEY = "selectedBackgroundImage_v2";
+const BACKGROUND_TIMESTAMP_KEY = "selectedBackgroundImageTimestamp_v2";
 
 export const getBackgroundImage = (): string | null => {
 	if (typeof window === "undefined") return null;
@@ -31,8 +32,8 @@ export const getBackgroundImage = (): string | null => {
 // Applies the current background to #bg:after.
 export const APPLY_BG_INLINE_SCRIPT = `
 (function() {
-	var key = "selectedBackgroundImage";
-	var tsKey = "selectedBackgroundImageTimestamp";
+	var key = "selectedBackgroundImage_v2";
+	var tsKey = "selectedBackgroundImageTimestamp_v2";
 	var ONE_HOUR = 3600000;
 	var stored = localStorage.getItem(key);
 	var ts = localStorage.getItem(tsKey);
@@ -47,5 +48,8 @@ export const APPLY_BG_INLINE_SCRIPT = `
 	var style = document.createElement("style");
 	style.textContent = "#bg:after { background-image: url('" + bg + "'); }";
 	document.head.appendChild(style);
+	// Clean up the old (potentially-bad) keys from the previous version
+	localStorage.removeItem("selectedBackgroundImage");
+	localStorage.removeItem("selectedBackgroundImageTimestamp");
 })();
 `;
