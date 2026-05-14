@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+	title="Book a Meeting - Max Matthews"
+	description="Schedule a meeting with Max Matthews."
+>
+	<div class="body">
+		<div id="wrapper">
+			<Header />
+			<div id="main" style="display: flex; flex-direction: column;">
+				<article id="calendar" class="active" style="max-width: 1100px;">
+					<h2 class="major">Book a Meeting</h2>
+					<div
+						class="calendly-inline-widget"
+						data-url="https://calendly.com/maxmatthews"
+						style="min-width: 320px; height: 700px;"
+					>
+					</div>
+				</article>
+			</div>
+			<Footer />
+		</div>
+	</div>
+</Layout>
+
+<script
+	is:inline
+	src="https://assets.calendly.com/assets/external/widget.js"
+	async></script>
+<link
+	rel="stylesheet"
+	href="https://assets.calendly.com/assets/external/widget.css"
+/>
