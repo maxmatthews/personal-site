@@ -120,7 +120,7 @@ export default class Contact extends Component {
 					{/*</li>*/}
 					<li>
 						<a
-							href="https://medium.maxmatthe.ws"
+							href="https://medium.com/mzm"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="icon2 fas fa-rss"
