@@ -19,7 +19,7 @@ export const getBackgroundImage = (): string | null => {
 	}
 
 	const bgNumber = Math.floor(Math.random() * 50) + 1;
-	const bgImage = `/bgs/bg-${bgNumber < 10 ? "0" + bgNumber : bgNumber}.webp`;
+	const bgImage = `/bgs/bg-0${bgNumber}.webp`;
 
 	localStorage.setItem(BACKGROUND_STORAGE_KEY, bgImage);
 	localStorage.setItem(BACKGROUND_TIMESTAMP_KEY, now.toString());
@@ -40,7 +40,7 @@ export const APPLY_BG_INLINE_SCRIPT = `
 	var bg = stored && ts && (now - parseInt(ts, 10)) < ONE_HOUR ? stored : null;
 	if (!bg) {
 		var n = Math.floor(Math.random() * 50) + 1;
-		bg = "/bgs/bg-" + (n < 10 ? "0" + n : n) + ".webp";
+		bg = "/bgs/bg-0" + n + ".webp";
 		localStorage.setItem(key, bg);
 		localStorage.setItem(tsKey, String(now));
 	}

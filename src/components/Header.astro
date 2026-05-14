@@ -10,17 +10,14 @@ const { showPortfolioScroll = false } = Astro.props;
 
 <header id="header">
 	<div class="logo">
-		<span>
-			<img
-				src="/images/headshot.png"
-				alt="portrait of max matthews"
-				width="120"
-				height="115"
-				style="margin-top: 5px; margin-left: -5px;"
-				loading="eager"
-				decoding="async"
-			/>
-		</span>
+		<img
+			src="/images/headshot.png"
+			alt="portrait of max matthews"
+			width="120"
+			height="115"
+			loading="eager"
+			decoding="async"
+		/>
 	</div>
 	<div class="content">
 		<div class="inner">
@@ -128,6 +125,27 @@ const { showPortfolioScroll = false } = Astro.props;
 		</ul>
 	</div>
 </header>
+
+<style is:global>
+	/* Headshot fills the logo circle */
+	#header .logo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	/* Center Lucide SVGs inside circular .icon2 anchors */
+	#headerSocialIcons .icons li a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
+	}
+	#headerSocialIcons .icons li a svg {
+		display: block;
+	}
+</style>
 
 <script>
 	// Smooth-scroll within page for buttons with data-scroll-to
