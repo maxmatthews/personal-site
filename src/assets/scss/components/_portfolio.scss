@@ -264,6 +264,87 @@
 		}
 	}
 
+	// Skills Section
+	.skills-section {
+		margin: 4rem 0;
+		opacity: 0;
+		transform: translateY(30px);
+
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			font-weight: 300;
+		}
+
+		.skills-grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media (min-width: 1100px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+		.skill-category {
+			h3 {
+				font-size: 1.25rem;
+				font-weight: 600;
+				margin: 0 0 1rem;
+				color: #667eea;
+			}
+
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+
+				.tech-tag {
+					background: rgba(255, 255, 255, 0.1);
+					padding: 0.25rem 0.75rem;
+					border-radius: 20px;
+					font-size: 0.85rem;
+					border: 1px solid rgba(255, 255, 255, 0.2);
+				}
+			}
+		}
+	}
+
+	// How I Work Section
+	.workflow-section {
+		margin: 4rem 0;
+		opacity: 0;
+		transform: translateY(30px);
+
+		h2 {
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			font-weight: 300;
+		}
+
+		.workflow-card {
+			max-width: 820px;
+			margin: 0 auto;
+
+			p {
+				color: rgba(255, 255, 255, 0.9);
+				line-height: 1.7;
+				font-size: 1.05rem;
+				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
 	// Employment Section
 	.employment-section {
 		margin: 4rem 0;
