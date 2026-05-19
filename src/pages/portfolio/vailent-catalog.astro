@@ -1,0 +1,154 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects } from "../../utils/projects";
+
+const project = projects.find((p) => p.slug === "vailent-catalog")!;
+---
+
+<Layout
+	title="Vailent Catalog - Max Matthews"
+	description="AI-powered product data platform for chemical materials companies - Project details for Max Matthews portfolio"
+	wrap={false}
+>
+	<div class="body">
+		<div id="wrapper">
+			<button
+				class="back-button-fixed"
+				type="button"
+				onclick="history.back()"
+				aria-label="Go back"
+			>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M19 12H5M12 19L5 12L12 5"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<div class="project-details-page loaded">
+				<div class="project-header animate-fade-in-up">
+					<h1>{project.title}</h1>
+					<p class="project-subtitle">{project.description}</p>
+				</div>
+
+				<div class="project-content-grid">
+					<div class="project-hero-section animate-fade-in-up">
+						<div class="project-image-large">
+							<div class="placeholder-image">
+								<span>{project.title.charAt(0)}</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="project-main-content">
+						<div class="project-about-section animate-fade-in-up">
+							<h3>About This Project</h3>
+							<div class="project-description">
+								<p>
+									Catalog is Vailent's centralized product data and
+									document management layer for industrial distribution.
+									It consolidates supplier documents, specifications,
+									pricing, and inventory into a governed source of truth,
+									replacing fragmented systems with synchronized,
+									version-controlled product information for account
+									managers, product directors, and technical directors.
+								</p>
+								<p>
+									As a Full Stack Engineer, I shipped core features of
+									Catalog and partnered with an AI engineer to design and
+									build the Neo4j knowledge graph that powers material
+									equivalence lookups, application-based product matching,
+									and semantic discovery across the catalog.
+								</p>
+								<p>
+									Day to day, I leveraged Claude Code at every stage of
+									the SDLC, turning the traditional workflow into an AI
+									Development Lifecycle (AIDLC) spanning PM requirements
+									intake, architecture, implementation, code review, and
+									DevOps.
+								</p>
+							</div>
+						</div>
+
+						<div class="project-details-grid">
+							<div class="project-section animate-fade-in-left">
+								<h3>Technologies Used</h3>
+								<div class="technologies-list">
+									{project.technologies.map((tech) => (
+										<span class="tech-tag-large">{tech}</span>
+									))}
+								</div>
+							</div>
+
+							<div class="project-section animate-fade-in-right">
+								<h3>Key Features</h3>
+								<ul class="features-list">
+									<li>
+										Neo4j knowledge graph for material equivalence,
+										application-based matching, and semantic discovery
+									</li>
+									<li>
+										AI-driven extraction of technical data sheets and
+										safety documents into structured, enriched product
+										information
+									</li>
+									<li>
+										Natural-language querying across the entire material
+										database
+									</li>
+									<li>
+										Side-by-side material comparisons with automated chart
+										generation
+									</li>
+									<li>
+										Governed source of truth with approval workflows,
+										version control, and audit trails
+									</li>
+									<li>
+										Single-line embedding to sync into websites, ERPs, and
+										CRMs
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="project-links-section animate-fade-in-up">
+							<div class="project-links">
+								<a
+									href="https://www.vailent.com/solutions/material-management"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="project-link primary"
+								>
+									<svg
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"></path>
+									</svg>
+									Learn About Catalog
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -11,6 +11,23 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		id: 5,
+		title: "Vailent Catalog",
+		description:
+			"AI-powered product data platform for chemical materials companies, with a Neo4j knowledge graph powering material equivalence, application-based matching, and semantic discovery.",
+		image: "",
+		imageAlt: "Vailent Catalog",
+		technologies: [
+			"Neo4j",
+			"Knowledge Graph",
+			"AI / LLMs",
+			"Claude Code",
+			"Full Stack",
+		],
+		slug: "vailent-catalog",
+		company: "vailent",
+	},
+	{
 		id: 1,
 		title: "Tailored Content Development Studio",
 		description:
