@@ -11,6 +11,23 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		id: 5,
+		title: "Vailent Catalog",
+		description:
+			"Vailent's AI-powered product data and document tool for industrial distribution.",
+		image: "/images/vailent-logo.svg",
+		imageAlt: "Vailent logo",
+		technologies: [
+			"TypeScript",
+			"React",
+			"Node.js",
+			"AI / LLMs",
+			"Full Stack",
+		],
+		slug: "vailent-catalog",
+		company: "vailent",
+	},
+	{
 		id: 1,
 		title: "Tailored Content Development Studio",
 		description:
