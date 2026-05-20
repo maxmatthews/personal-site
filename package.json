@@ -14,7 +14,7 @@
 		"format": "prettier --write '**/*.{js,jsx,ts,tsx,astro,scss,css}'"
 	},
 	"dependencies": {
-		"@astrojs/react": "^4.0.0",
+		"@astrojs/react": "^5.0.0",
 		"@astrojs/sitemap": "^3.2.0",
 		"@types/react": "^18.3.12",
 		"@types/react-dom": "^18.3.1",
