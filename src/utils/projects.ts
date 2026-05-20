@@ -15,8 +15,8 @@ export const projects: Project[] = [
 		title: "Vailent Catalog",
 		description:
 			"Vailent's AI-powered product data and document tool for industrial distribution.",
-		image: "",
-		imageAlt: "Vailent Catalog",
+		image: "/images/vailent-logo.svg",
+		imageAlt: "Vailent logo",
 		technologies: [
 			"TypeScript",
 			"React",
