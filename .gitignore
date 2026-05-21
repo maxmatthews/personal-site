@@ -30,3 +30,9 @@ pnpm-debug.log*
 lighthouse-prod.json
 lighthouse-*.json
 .playwright-mcp/
+
+# archives / design source files
+*.tgz
+*.tar.gz
+*.afphoto
+*.afdesign
